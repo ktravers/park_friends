@@ -35,7 +35,12 @@ ActiveRecord::Schema.define(version: 20150330233504) do
     t.string "zipcode"
   end
 
-  create_table "players", force: :cascade do |t|
+  create_table "reservations", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "player_id"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string  "first_name"
     t.string  "last_name"
     t.string  "email"
@@ -43,11 +48,6 @@ ActiveRecord::Schema.define(version: 20150330233504) do
     t.string  "profile_picture"
     t.string  "favorite_games"
     t.boolean "host"
-  end
-
-  create_table "reservations", force: :cascade do |t|
-    t.integer "game_id"
-    t.integer "player_id"
   end
 
 end
