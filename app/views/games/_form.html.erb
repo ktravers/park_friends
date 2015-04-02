@@ -1,0 +1,19 @@
+<%= form_for(@game) do |f| %>
+ <div class="field">
+   <%= f.label :host %><br>
+   <%= f.text_field :host_id, name: current_user.id, value: "#{current_user.first_name} #{current_user.last_name}" %><br>
+   <%= f.label :game_category %><br>
+   <%= f.text_field :game_category %><br>
+   <%= f.label :date %><br>
+   <%= f.text_field :date %><br>
+   <%= f.label :time %><br>
+   <%= f.text_field :time %><br>
+   <%= f.label :player_limit %><br>
+   <%= f.text_field :player_limit %><br>
+   <%= f.label "Location" %><br>
+   <%= f.text_field :facility_id%><br>
+ </div>
+ <div class="actions">
+   <%= f.submit %>
+ </div>
+<% end %>
