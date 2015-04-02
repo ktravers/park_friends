@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20150401021653) do
     t.time    "time"
     t.string  "game_category"
     t.integer "player_limit"
-    t.integer "facility_id"
+    t.integer "park_id"
     t.integer "host_id"
+    t.string  "additional_info"
   end
 
   create_table "parks", force: :cascade do |t|

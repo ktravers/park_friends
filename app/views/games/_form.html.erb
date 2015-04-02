@@ -1,19 +1,45 @@
+<div class="game-form">
+
+<!-- convert to simple form? -->
+<!-- https://github.com/plataformatec/simple_form -->
 <%= form_for(@game) do |f| %>
- <div class="field">
+
+   <%= f.hidden_field :host_id, value: @user.id %>
+   <!-- hidden field passes host_id in params -->
+
    <%= f.label :host %><br>
-   <%= f.text_field :host_id, name: current_user.id, value: "#{current_user.first_name} #{current_user.last_name}" %><br>
+   <%= f.text_field :host, value: "#{@user.first_name} #{@user.last_name}" %><br>
+
+   <%= f.label :description %><br>
+   <%= f.text_field :description %><br>
+
    <%= f.label :game_category %><br>
    <%= f.text_field :game_category %><br>
+   <!-- todo: make this a drop down: options are all game_categories -->
+   <!-- use f.select? f.collection_select? -->
+
    <%= f.label :date %><br>
-   <%= f.text_field :date %><br>
+   <%= f.date_field :date, min: Date.today, value: Date.today %><br> 
+   <!-- value preset to Date.today; cannot choose date in the past -->
+
    <%= f.label :time %><br>
-   <%= f.text_field :time %><br>
+   <%= f.time_field :time, placeholder: Time.now.localtime.strftime("%H:%M")  %><br> 
+   <!-- TODO: make this work: placeholder value formatted as hour:minute am/pm -->
+
    <%= f.label :player_limit %><br>
    <%= f.text_field :player_limit %><br>
-   <%= f.label "Location" %><br>
-   <%= f.text_field :facility_id%><br>
+
+   <%= f.label :location %><br>
+   <%= f.text_field :park_id%><br> 
+   <!-- todo: make this a drop down: options are parks, filtered by game_category -->
+   <!-- use f.select? f.collection_select? -->
+
+   <%= f.label :additional_info %><br>
+   <%= f.text_field :additional_info %><br> 
  </div>
- <div class="actions">
+
+ <div class="game-form-button">
    <%= f.submit %>
  </div>
+
 <% end %>

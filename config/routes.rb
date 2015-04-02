@@ -1,21 +1,14 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+  # site root
   root 'welcome#index'
 
+  # resources :parks ## todo: add?
   resources :users
-
-  # users#index => all the users
-  # users#show => profile page
-  # users#create => signup
-  # users#edit => edit your profile
-  # users#destroy => delete your profile
-
   resources :games
   resources :reservations
 
+  # facebook-omniauth routes for login/logout
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'signout', to: 'sessions#destroy', as: 'signout'
 

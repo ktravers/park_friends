@@ -1,10 +1,29 @@
 <p id="notice"><%= notice %></p>
-<%= "USER SHOW PAGE" %>
-<div>Play
 
-<%=link_to 'Host A Game.', new_game_path %>
+<img src=<%= "#{@user.profile_picture}" %> alt="<%= current_user_full_name %>">
 
+<h1><%= current_user_full_name %></h1>
+
+<div id="play-new-game">
+  <h2>Play</h2>
+  <%= link_to 'Host A New Game', new_game_path %>
 </div>
-<div>Friends</div>
-<div>Games</div>
+
+<div id="friends-list">
+  <h2>Friends</h2>
+  <ul>
+    <!-- @users.sample(5).each do |user| -->
+    <!-- show user info -->
+    <!-- end -->
+  </ul>
+</div>
+
+<div id="games-list">
+  <h2>Games</h2>
+  <ul>
+    <!-- @user.games.all.each do |game| -->
+    <!-- show game info -->
+    <!-- end -->
+  </ul>
+</div>
 
