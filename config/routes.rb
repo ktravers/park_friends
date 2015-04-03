@@ -3,15 +3,17 @@ Rails.application.routes.draw do
   # site root
   root 'welcome#index'
 
+  # user dashboard
+  get 'dashboard' => 'dashboard#index'
+
   # resources :parks ## todo: add?
+  #resources :reservations
   resources :users
   resources :games
-  resources :reservations
-
+  
   # facebook-omniauth routes for login/logout
   get 'auth/facebook/callback' => 'sessions#create'
   get 'signout', to: 'sessions#destroy', as: 'signout'
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

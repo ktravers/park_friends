@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<img src="<%= @user.profile_picture %>" alt="<%= @user.full_name %>">
+<img src="<%= current_user.profile_picture %>" alt="<%= current_user.full_name %>">
 
-<h1>Profile Page: <%= @user.full_name %></h1>
+<h1>Dashboard: <%= current_user.full_name %></h1>
 
 <div id="play-new-game">
   <h2>Play</h2>
-  <%#= link_to 'Host A New Game', new_game_path %><br>
-  <%#= link_to 'Join A Game', games_path %>
+  <%= link_to 'Host A New Game', new_game_path %><br>
+  <%= link_to 'Join A Game', games_path %>
 </div>
 
 <div id="friends-list">
@@ -21,15 +21,15 @@
 
 <div id="games-list">
   <h2>Upcoming Games</h2>
-  <h3>Games <%= "#{@user.full_name}" %> is Hosting:</h3>
+  <h3>Games I'm Hosting:</h3>
   <ul>
-    <% @user.upcoming_games_host.each do |game| %>
+    <% current_user.upcoming_games_host.each do |game| %>
     <li><%= link_to "#{game.description}", game %></li>
     <% end %>
   </ul>
-  <h3>Games <%= "#{@user.full_name}" %> is Playing:</h3>
+  <h3>Games I'm Playing:</h3>
   <ul>
-    <% @user.upcoming_games_player.each do |game| %>
+    <% current_user.upcoming_games_player.each do |game| %>
     <li><%= link_to "#{game.description}", game %></li>
     <% end %>
   </ul>

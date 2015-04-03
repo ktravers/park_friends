@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+  <!-- get error messages to display -->
+  <% if @game.errors.any? %>
+     <div id="error_explanation">
+       <h2><%= pluralize(@game.errors.count, "error") %> prohibited this reservation from being made:</h2>
+    
+       <ul>
+       <% @game.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+       </ul>
+     </div>
+   <% end %>
+
 <h1><%= @game.description %></h1>
 
 <ul>
@@ -29,3 +42,5 @@
   <li>Additional info: <%= @game.additional_info %></li>
   <!-- weather -->
 </ul>
+
+<%= link_to "Back to games", games_path %>
