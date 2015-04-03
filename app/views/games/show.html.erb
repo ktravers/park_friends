@@ -12,8 +12,22 @@
   <li><% @game.players.each do |p| %><!-- if break, change to @game.reservations.each -->
       <img src="<%= p.profile_picture %>"><%= "#{p.first_name} #{p.last_name}" %>
       <% end %>
+
+      <!-- NESTED RESOURCES???? YEAH, PROLLY -->
+      <% if @game.has_open_spots? %>
+        <%= render 'reservations/form' %>
+      <% end %> 
+
   </li>
-  <li>Open spots: <%= @game.open_spots %></li>
+
+  <li>Open spots: 
+    <% if @game.has_open_spots? %>
+      <%= @game.open_spots %>
+    <% else %>  
+      <%= "Sorry, this game is full." %>
+    <% end %>  
+  </li>
+
   <li><!-- link to sign up --></li>
   <li>Additional info: <%= @game.additional_info %></li>
   <!-- weather -->
