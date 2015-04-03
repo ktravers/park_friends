@@ -1,21 +1,21 @@
 class GamesController < ApplicationController
-  
+  before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:new, :create]
+  before_action :login_required, only: [:edit, :update, :new, :destroy]
+
   def index
     @games = Game.all
   end
 
   def new
-    set_user
   	@game = Game.new
   end
 
   def show
-    set_game
   end
 
   # creates new game object from params hash
   def create
-    set_user
   	@game = Game.new(game_params)
   	if @game.save
   		redirect_to @game, :notice => "Congrats! You're hosting a game!"
@@ -25,7 +25,13 @@ class GamesController < ApplicationController
   	end
   end
 
-  def edit
+  # update game settings
+  def update
+    if @game.update(game_params)
+      redirect_to :back, :notice => "Game updated."
+    else
+      redirect_to :back, :notice => "Sorry, unable to update game."
+    end
   end
 
   def destroy
@@ -44,6 +50,7 @@ class GamesController < ApplicationController
 
     # strong params
     def game_params
-    	params.require(:game).permit(:description, :date, :time, :game_category, :player_limit, :park_id, :host_id, :additional_info)
+    	params.require(:game).permit(:description, :date, :time, :game_category, :player_limit, :park_id, :host_id, :additional_info, reservations_attributes: [:player_id, :game_id])
     end
+
 end

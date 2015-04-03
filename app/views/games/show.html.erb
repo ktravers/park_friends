@@ -9,14 +9,13 @@
   <li>Time: <%= @game.time.strftime("%l:%M %p") %></li>
   <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li><!-- google map -->
   <li>Players:</li>
-  <li><% @game.players.each do |p| %><!-- if break, change to @game.reservations.each -->
+  <li><% @game.players.each do |p| %> <!-- if break, change to @game.reservations.each -->
       <img src="<%= p.profile_picture %>"><%= "#{p.first_name} #{p.last_name}" %>
       <% end %>
 
       <% if @game.has_open_spots? %>
         <%= render 'reservation' %>
       <% end %> 
-
   </li>
 
   <li>Open spots: 

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :games, :foreign_key => 'host_id'
 	has_many :reservations, through: :games
-  has_many :reservations, :foreign_key => 'player_id'
+  has_many :reservations, :foreign_key => 'player_id', :dependent => :destroy
 
 #   {
 #   :provider => 'facebook',
@@ -33,18 +33,22 @@ class User < ActiveRecord::Base
     end
   end
 
+  # returns user's full name
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
 
+  # boolean check on whether user is a host
   def host?
     self.host
   end
 
+  # returns array of upcoming games user is hosting
   def upcoming_games_host
     self.games.all.select {|g| g.date >= Date.today}
   end
 
+  # returns array of upcoming games user is playing
   def upcoming_games_player
     games = []
     self.reservations.each do |r|
@@ -53,5 +57,8 @@ class User < ActiveRecord::Base
     games
   end
 
+  # idea: have 2 categories: 
+  # 1. games i'm hosting
+  # 2. all my games, with games user is hosting flagged "host"
 
 end

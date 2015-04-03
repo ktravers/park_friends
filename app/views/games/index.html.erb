@@ -3,7 +3,7 @@
   <% @games.each do |game| %>
   <li><%= "#{game.date.strftime("%A, %B %e")}, #{game.time.strftime("%l:%M %p")}" %> |
       <%= "#{game.description}" %> <%= " (#{game.game_category})" %> |
-      <%#= game.park.name %>
+      <%= game.park.name %>
       <%= link_to "Sign Up", game %>
   <% end %>
   </li>
