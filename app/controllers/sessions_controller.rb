@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
 
   # uses oauth_hash information to find or create @user
   def create
-    # binding.pry
     @user = User.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"]) || User.create_with_omniauth(auth_hash)     
     login(@user)
     redirect_to @user, :notice => "Signed in!"

@@ -13,9 +13,8 @@
       <img src="<%= p.profile_picture %>"><%= "#{p.first_name} #{p.last_name}" %>
       <% end %>
 
-      <!-- NESTED RESOURCES???? YEAH, PROLLY -->
       <% if @game.has_open_spots? %>
-        <%= render 'reservations/form' %>
+        <%= render 'reservation' %>
       <% end %> 
 
   </li>
