@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :reservations
 
   # facebook-omniauth routes for login/logout
-  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/facebook/callback' => 'sessions#create'
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
 

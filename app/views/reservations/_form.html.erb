@@ -1,5 +1,12 @@
-<%= form_for @reservation do |f| %>
+<!-- <%= form_for @reservation do |f| %>
   <%= f.hidden_field :player_id, value: current_user.id %>
   <%= f.hidden_field :game_id, value: @game.id %>
   <%= f.submit "Sign Up" %>
+<% end %> -->
+
+<%= form_for @game do |f| %>
+  <%= f.fields_for :reservations, Reservation.new do |reservation_fields| %>
+    <%= reservation_fields.hidden_field :player_id, value: current_user.id %>
+    <%= reservation_fields.hidden_field :game_id, value: @game.id %>
+  <% end %>
 <% end %>
