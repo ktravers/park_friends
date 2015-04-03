@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<img src=<%= "#{@user.profile_picture}" %> alt="<%= current_user_full_name %>">
+<!-- todo: create separate 'dashboard' page for current user? -->
+<!-- add get user route 'dashboard' -->
+<!-- check Seiji & Chloe's project for example -->
 
-<h1><%= current_user_full_name %></h1>
+<img src="<%= @user.profile_picture %>" alt="<%= @user.full_name %>">
+
+<h1><%= @user.full_name %></h1>
 
 <div id="play-new-game">
   <h2>Play</h2>

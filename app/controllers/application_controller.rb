@@ -20,10 +20,4 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user.id
   end
 
-  # returns concatenation of current user's name
-  def current_user_full_name
-    "#{current_user.first_name} #{current_user.last_name}"
-  end
-  helper_method :current_user_full_name
-
 end

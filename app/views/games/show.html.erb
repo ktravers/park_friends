@@ -4,9 +4,9 @@
 
 <ul>
   <li>Category: <%= @game.game_category %></li>
-  <li>Host: <%= @game.host.first_name %></li><!-- create user_full_name method -->
-  <li>Date: <%= @game.date %></li>
-  <li>Time: <%= @game.time %></li>
+  <li>Host: <%= @game.host.full_name %></li>
+  <li>Date: <%= @game.date.strftime("%A, %B %e") %></li>
+  <li>Time: <%= @game.time.strftime("%l:%M %p") %></li>
   <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li><!-- google map -->
   <li>Players:</li>
   <li><% @game.players.each do |p| %><!-- if break, change to @game.reservations.each -->
@@ -15,7 +15,7 @@
 
       <!-- NESTED RESOURCES???? YEAH, PROLLY -->
       <% if @game.has_open_spots? %>
-        <%= render 'reservations/form' %>
+        <%#= render 'reservations/form' %>
       <% end %> 
 
   </li>
@@ -28,7 +28,6 @@
     <% end %>  
   </li>
 
-  <li><!-- link to sign up --></li>
   <li>Additional info: <%= @game.additional_info %></li>
   <!-- weather -->
 </ul>
