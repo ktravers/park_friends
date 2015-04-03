@@ -1,1 +1,20 @@
 <p id="notice"><%= notice %></p>
+
+<h1><%= @game.description %></h1>
+
+<ul>
+  <li>Category: <%= @game.game_category %></li>
+  <li>Host: <%= @game.host.first_name %></li><!-- create user_full_name method -->
+  <li>Date: <%= @game.date %></li>
+  <li>Time: <%= @game.time %></li>
+  <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li><!-- google map -->
+  <li>Players:</li>
+  <li><% @game.players.each do |p| %><!-- if break, change to @game.reservations.each -->
+      <img src="<%= p.profile_picture %>"><%= "#{p.first_name} #{p.last_name}" %>
+      <% end %>
+  </li>
+  <li>Open spots: <%= @game.open_spots %></li>
+  <li><!-- link to sign up --></li>
+  <li>Additional info: <%= @game.additional_info %></li>
+  <!-- weather -->
+</ul>

@@ -33,5 +33,21 @@ class User < ActiveRecord::Base
     end
   end
 
+  def host?
+    self.host
+  end
+
+  def upcoming_games_host
+    self.games.all.select {|g| g.date >= Date.today}
+  end
+
+  def upcoming_games_player
+    games = []
+    self.reservations.each do |r|
+      games << r.game if r.game.date >= Date.today
+    end
+    games
+  end
+
 
 end

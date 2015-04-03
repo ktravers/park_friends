@@ -1,3 +1,10 @@
-<!-- @games.each do |game| -->
-<!-- game.location | game.date, game.time | game.description | game.game_category | game.host -->
-<!-- end -->
+<h1>Games</h1>
+<ul>
+  <% @games.each do |game| %>
+  <li><%= "#{game.date}, #{game.time}" %> 
+      <%= "#{game.description}" %> <%= " (#{game.game_category})" %> 
+      <%#= game.park.name %>
+      <%= link_to "Sign Up", game %>
+  <% end %>
+  </li>
+</ul>

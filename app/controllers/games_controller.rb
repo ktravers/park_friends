@@ -1,11 +1,16 @@
 class GamesController < ApplicationController
   
+  def index
+    @games = Game.all
+  end
+
   def new
     set_user
   	@game = Game.new
   end
 
   def show
+    set_game
   end
 
   # creates new game object from params hash

@@ -6,7 +6,8 @@
 
 <div id="play-new-game">
   <h2>Play</h2>
-  <%= link_to 'Host A New Game', new_game_path %>
+  <%= link_to 'Host A New Game', new_game_path %><br>
+  <%= link_to 'Join A Game', games_path %>
 </div>
 
 <div id="friends-list">
@@ -19,11 +20,18 @@
 </div>
 
 <div id="games-list">
-  <h2>Games</h2>
+  <h2>Upcoming Games</h2>
+  <h3>Games I'm Hosting:</h3>
   <ul>
-    <!-- @user.games.all.each do |game| -->
-    <!-- show game info -->
-    <!-- end -->
+    <% @user.upcoming_games_host.each do |game| %>
+    <li><%= link_to "#{game.description}", game %></li>
+    <% end %>
+  </ul>
+  <h3>Games I'm Playing:</h3>
+  <ul>
+    <% @user.upcoming_games_player.each do |game| %>
+    <li><%= link_to "#{game.description}", game %></li>
+    <% end %>
   </ul>
 </div>
 

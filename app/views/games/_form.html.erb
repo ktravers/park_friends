@@ -19,8 +19,8 @@
    <!-- use f.select? f.collection_select? -->
 
    <%= f.label :date %><br>
-   <%= f.date_field :date, min: Date.today, value: Date.today %><br> 
-   <!-- value preset to Date.today; cannot choose date in the past -->
+   <%= f.date_field :date, min: Date.today, placeholder: Date.today %><br> 
+   <!-- placeholder set to Date.today; cannot choose date in the past -->
 
    <%= f.label :time %><br>
    <%= f.time_field :time, placeholder: Time.now.localtime.strftime("%H:%M")  %><br> 
