@@ -1,9 +1,10 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy, :invite]
-  before_action :set_user, only: [:index, :new, :create, :edit, :update, :invite]
+  before_action :set_user, only: [:index, :new, :create, :edit, :update]
   before_action :login_required, only: [:edit, :update, :new, :create, :destroy, :invite]
 
   def invite
+    # @user = User.find(params[:game][:user_id])
     UserMailer.invitation(@game, @user).deliver
   end
 
@@ -57,7 +58,7 @@ class GamesController < ApplicationController
 
     # strong params
     def game_params
-    	params.require(:game).permit(:description, :date, :time, :game_category, :player_limit, :park_id, :host_id, :additional_info, reservations_attributes: [:player_id, :game_id])
+    	params.require(:game).permit(:id, :description, :date, :time, :game_category, :player_limit, :park_id, :host_id, :additional_info, reservations_attributes: [:player_id, :game_id])
     end
 
 end

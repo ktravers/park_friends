@@ -15,7 +15,15 @@
       <% end %>
 
       <% if @game.has_open_spots? %>
-      <%= link_to "Invite some friends!", invite_path if !player_not_signed_up? %><!-- todo: link goes to ActionMailer -->
+        <% if !player_not_signed_up? %>
+
+          <%#= form_for(@game) do |f| %>
+            <%#= f.fields_for :users, current_user do |uf| %>
+            <%#= uf.hidden_field :user_id, value: current_user.id %><!-- todo: pass correct params; user fields_for? -->
+            <%#= f.submit "Invite some friends!", invite_path %>
+            <%# end %>
+          <%= link_to "Invite some friends!", invite_path %><!-- todo: pass user param info here? -->
+        <% end %>
       <%= render 'reservation' if player_not_signed_up? %>
       <% end %> 
   </li>

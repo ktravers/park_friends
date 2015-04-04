@@ -1,15 +1,16 @@
 <nav>
   <ul>
     <li>
-      Park Friends | About | NYC Parks
-      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp< fake header >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <%= link_to "Park Friends", "#" %> | About | <%= link_to "NYC Parks", parks_path %>
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp< fake header >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       
       <% if request.path == root_path %>
-      Sign In
+        Sign In
       <% else %>
-      <%= "Hi #{current_user.first_name}! | Dashboard | Calendar | Sign Out" %>
+        Hi <%= link_to "#{current_user.first_name}", user_path(current_user) %>! | 
+        <%= link_to "Dashboard", dashboard_path %> | 
+        <%= link_to "Calendar", games_path %> | Sign Out
       <% end %>
-
     </li>
   </ul>
 </nav>
