@@ -15,7 +15,7 @@
       <% end %>
 
       <% if @game.has_open_spots? %>
-      <%= link_to "Invite some friends!", game_path(@game) if !player_not_signed_up? %><!-- todo: link goes to ActionMailer -->
+      <%= link_to "Invite some friends!", invite_path if !player_not_signed_up? %><!-- todo: link goes to ActionMailer -->
       <%= render 'reservation' if player_not_signed_up? %>
       <% end %> 
   </li>

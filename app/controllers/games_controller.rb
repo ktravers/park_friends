@@ -1,7 +1,11 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:index, :new, :create, :edit, :update]
-  before_action :login_required, only: [:edit, :update, :new, :create, :destroy]
+  before_action :set_game, only: [:show, :edit, :update, :destroy, :invite]
+  before_action :set_user, only: [:index, :new, :create, :edit, :update, :invite]
+  before_action :login_required, only: [:edit, :update, :new, :create, :destroy, :invite]
+
+  def invite
+    UserMailer.invitation(@game, @user).deliver
+  end
 
   def index
     @games = Game.all
@@ -13,6 +17,7 @@ class GamesController < ApplicationController
 
   # creates new game object from params hash
   def create
+    # binding.pry
   	@game = Game.new(game_params)
 
     if @game.save
@@ -24,9 +29,9 @@ class GamesController < ApplicationController
   # update game attributes
   def update
     if @game.update(game_params)
-      redirect_to :back, :notice => "Game updated."
+      redirect_to @game, :notice => "Game updated."
     else
-      redirect_to :back, :notice => "Sorry, unable to update game."
+      redirect_to @game, :notice => "Sorry, unable to update game."
     end
   end
 

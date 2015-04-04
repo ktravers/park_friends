@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
 
   # checks whether a current user exists, returns true if yes, returns false if not
   def logged_in?
+    # binding.pry
     !!current_user
   end
   helper_method :logged_in?

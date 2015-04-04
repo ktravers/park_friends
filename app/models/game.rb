@@ -3,6 +3,7 @@ class Game < ActiveRecord::Base
   belongs_to :host, :class_name => "User"
   has_many :reservations, :dependent => :destroy
   has_many :players, :class_name => "User", through: :reservations
+  validates :park_id, presence: true
   accepts_nested_attributes_for :reservations
 
   # boolean check - does this game have any reservations?

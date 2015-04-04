@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :games
+
+  get 'invite' => 'games#invite'
   
   # facebook-omniauth routes for login/logout
   get 'auth/facebook/callback' => 'sessions#create'

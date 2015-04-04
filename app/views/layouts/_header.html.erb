@@ -3,7 +3,13 @@
     <li>
       Park Friends | About | NYC Parks
       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp< fake header >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      Hi <%= "#{current_user.first_name}" %>! | Dashboard | Calendar | Sign Out
+      
+      <% if request.path == root_path %>
+      Sign In
+      <% else %>
+      <%= "Hi #{current_user.first_name}! | Dashboard | Calendar | Sign Out" %>
+      <% end %>
+
     </li>
   </ul>
 </nav>

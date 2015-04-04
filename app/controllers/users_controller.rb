@@ -5,6 +5,9 @@ class UsersController < ApplicationController
     set_user
   end
 
+  def update
+  end
+
   private
     # finds existing user object in database using params[:id]
     def set_user

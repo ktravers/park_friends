@@ -42,7 +42,7 @@ Rails.application.configure do
 
   # Change mail delvery to either :smtp, :sendmail, :file, :test
   config.action_mailer.delivery_method = :letter_opener
-  
+
   # config.action_mailer.delivery_method = :smtp
   # config.action_mailer.smtp_settings = {
   #   address: "smtp.gmail.com",
@@ -55,5 +55,5 @@ Rails.application.configure do
   # }
 
   # Specify what domain to use for mailer URLs
-  # config.action_mailer.default_url_options = {host: "localhost:3000"}
+  config.action_mailer.default_url_options = {host: "localhost:3000"}
 end

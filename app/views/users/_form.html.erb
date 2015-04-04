@@ -1,4 +1,4 @@
-<div class="game-form">
+<div class="user-form">
 
 <%= simple_form_for(@game) do |f| %>
 
@@ -26,7 +26,7 @@
    <%= f.text_field :player_limit %><br>
 
    <%= f.label :location %><br>
-   <%= f.input :park_id, label: false, collection: Park.all.order("name") %><br> 
+   <%= f.input :park_id, collection: Park.all.order("name") %><br> 
 
    <%= f.label :additional_info %><br>
    <%= f.text_field :additional_info %><br> 
