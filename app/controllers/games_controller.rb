@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:new, :create]
-  before_action :login_required, only: [:edit, :update, :new, :destroy]
+  before_action :set_user, only: [:new, :create, :edit, :update]
+  before_action :login_required, only: [:edit, :update, :new, :create, :destroy]
 
   def index
     @games = Game.all
@@ -11,17 +11,12 @@ class GamesController < ApplicationController
   	@game = Game.new
   end
 
-  def show
-  end
-
   # creates new game object from params hash
   def create
   	@game = Game.new(game_params)
   	if @game.save
   		redirect_to @game, :notice => "Congrats! You're hosting a game!"
-      # idea: have :notice display something like 
-      # "Congrats! Your #{@game.game_category} is scheduled for #{@game.date} at #{@game.time}."
-      # "Now invite some friends!" => as a link to our mailer
+      # idea: have :notice display include "Now invite some friends!" => as a link to our mailer
   	end
   end
 
@@ -35,6 +30,11 @@ class GamesController < ApplicationController
   end
 
   def destroy
+    @game.destroy
+    respond_to do |format|
+      format.html { redirect_to games_path }
+      # format.json { head :no_content }
+    end
   end
 
   private

@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   # user dashboard
   get 'dashboard' => 'dashboard#index'
 
-  # resources :parks ## todo: add?
-  #resources :reservations
   resources :users
   resources :games
   

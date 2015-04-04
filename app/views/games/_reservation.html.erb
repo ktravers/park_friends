@@ -1,5 +1,19 @@
 <!-- builds a new reservation object on @game -->
 <%= form_for @game do |f| %>
+
+  <!-- get error messages to display -->
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= f.fields_for :reservations, Reservation.new do |rf| %>
     <%= rf.hidden_field :game_id, value: @game.id %>
     <%= rf.hidden_field :player_id, value: current_user.id %>

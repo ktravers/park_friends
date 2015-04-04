@@ -2,7 +2,7 @@
 
 <!-- convert to simple form? -->
 <!-- https://github.com/plataformatec/simple_form -->
-<%= form_for(@game) do |f| %>
+<%= simple_form_for(@game) do |f| %>
 
    <%= f.hidden_field :host_id, value: @user.id %>
    <!-- hidden field passes host_id in params -->
@@ -14,9 +14,7 @@
    <%= f.text_field :description %><br>
 
    <%= f.label :game_category %><br>
-   <%= f.text_field :game_category %><br>
-   <!-- todo: make this a drop down: options are all game_categories -->
-   <!-- use f.select? f.collection_select? -->
+   <%= f.select :game_category, collection: @game.game_categories.keys %><br>
 
    <%= f.label :date %><br>
    <%= f.date_field :date, min: Date.today, placeholder: Date.today %><br> 
@@ -30,7 +28,7 @@
    <%= f.text_field :player_limit %><br>
 
    <%= f.label :location %><br>
-   <%= f.text_field :park_id%><br> 
+   <%= f.input :park_id, label: false, collection: Park.select("name").order("name") %><br> 
    <!-- todo: make this a drop down: options are parks, filtered by game_category -->
    <!-- use f.select? f.collection_select? -->
 

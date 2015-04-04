@@ -24,4 +24,10 @@ class Game < ActiveRecord::Base
     end
   end
 
+  def game_categories
+    { "Baseball" => "Baseball Fields", "Basketball" => "Basketball Courts", "Bocce" => "Bocce Courts",  
+      "Football" => "Football Fields", "Skating" => "Ice Skating Rinks", "Swimming" => "Pools", 
+      "Tennis"  => "Tennis Courts", "Other" => ["Playgrounds", "Beaches", "Nature Centers", "Recreation Centers"] }
+  end
+
 end
