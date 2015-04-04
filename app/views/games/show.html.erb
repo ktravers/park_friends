@@ -9,22 +9,17 @@
   <li>Time: <%= @game.time.strftime("%l:%M %p") %></li>
   <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li><!-- google map -->
   <li>Players:</li>
-  <li><% @game.players.each do |p| %> <!-- if break, change to @game.reservations.each -->
-      <img src="<%= p.profile_picture %>"><%= "#{p.first_name} #{p.last_name}" %>
-      <% end %>
+  <li><% @game.players.each do |p| %>
+    <%= image_tag "#{p.profile_picture}", alt: "#{p.full_name}" %>
+    <% end %>
 
-      <% if player_not_signed_up? && @game.has_open_spots? %>
-        <%= render 'reservation' %>
-      <% end %> 
-  </li>
-
-  <li>Open spots: 
     <% if @game.has_open_spots? %>
-      <%= @game.open_spots %>
-    <% else %>  
-      <%= "Sorry, this game is full." %>
-    <% end %>  
+      <%= link_to "Invite some friends!", game_path(@game) if !player_not_signed_up? %><!-- todo: link goes to ActionMailer -->
+      <%= render 'reservation' if player_not_signed_up? %>
+    <% end %> 
   </li>
+
+  <li>Open spots: <%= @game.has_open_spots? ? @game.open_spots : "Sorry, this game is full." %></li>
 
   <li>Additional info: <%= @game.additional_info %></li>
   <!-- weather -->
