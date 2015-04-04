@@ -14,6 +14,10 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
+  # def show
+  #   @src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCZfSNT7EXqCTmOd2iARQdDr6znf9IiAlc&q="+"#{"Central Park".gsub(" ", "+")},New+York+NY"
+  # end
+  
   def new
   	@game = Game.new
   end
@@ -66,5 +70,5 @@ class GamesController < ApplicationController
 
 end
 
-["test", "1", "2"].each do |array|
+
   
