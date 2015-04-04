@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
       user.expires_at = auth["credentials"]["expires_at"]   ### ???
       user.expires = auth["credentials"]["expires"]         ### ???
     end
+    UserMailer.signup_confirmation(user).deliver
   end
 
   # returns user's full name

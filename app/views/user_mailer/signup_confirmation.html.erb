@@ -1,0 +1,11 @@
+<p>Hi <%= @user.full_name %>,</p>
+
+<p>Thank you for signing up for Park Friends! We're happy to have you onboard.</p>
+
+<p>You can get started by visiting your <%= link_to "Dashboard", dashboard_path %>.</p>
+
+<p>There, you can <%= link_to "change your user settings" edit_user_path(@user) %>, check out what <%= link_to "games you have coming up", dashboard_path %>, <%= link_to "browse other games to join", games_path %>, and invite your friends to a <%= link_to "game you're hosting", dashboard_path %>. Any questions, comments, or suggestions are always welcome at <%= mail_to "hello@parkfriends.com", "hello@parkfriends.com", subject: "Support | Park Friends" %>.</p>
+
+<p>Enjoy NYC Parks!</p>
+
+<p>♥ Team Park Friends</p> 

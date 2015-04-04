@@ -27,13 +27,13 @@
   <h3>Games I'm Hosting:</h3>
   <ul>
     <% current_user.upcoming_games_host.each do |game| %>
-    <li><%= link_to "#{game.description}", game %></li>
+    <li><%= "#{game.date.strftime("%A, %B %e")}" %> | <%= link_to "#{game.description}", game %></li>
     <% end %>
   </ul>
   <h3>Games I'm Playing:</h3>
   <ul>
     <% current_user.upcoming_games_player.each do |game| %>
-    <li><%= link_to "#{game.description}", game %></li>
+    <li><%= "#{game.date.strftime("%A, %B %e")}" %> | <%= link_to "#{game.description}", game %></li>
     <% end %>
   </ul>
 </div>
