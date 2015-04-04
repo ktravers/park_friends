@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # user dashboard
   get 'dashboard' => 'dashboard#index'
 
+  get 'parks' => 'parks#index'
   resources :users
   resources :games
 

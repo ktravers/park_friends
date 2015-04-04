@@ -1,3 +1,15 @@
-<!-- @parks.each do |park| -->
-<!-- park.name | park.location | park.activity -->
-<!-- end -->
+<h1>NYC Parks</h1>
+
+<!-- add filters by activity -->
+
+<ul>
+  <% @parks.each do |park| %>
+  <li><%= park.name %> |
+      <%= park.location %> |
+      <%= park.activity %> |
+      <%= link_to "See all upcoming games at #{park.name}", "#" %><!-- use form to pass park_id to games index? -->    
+  <% end %>
+  </li>
+</ul>
+
+<%= link_to "Back to dashboard", dashboard_path %>
