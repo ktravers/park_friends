@@ -4,7 +4,7 @@
 
 <ul>
   <li>Category: <%= @game.game_category %></li>
-  <li>Host: <%= @game.host.full_name %></li>
+  <li>Host: <%= link_to "#{@game.host.full_name}", user_path(@game.host_id) %>
   <li>Date: <%= @game.date.strftime("%A, %B %e") %></li>
   <li>Time: <%= @game.time.strftime("%l:%M %p") %></li>
   <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li><!-- google map -->

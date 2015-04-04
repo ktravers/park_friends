@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     set_user
+    @users = User.all
   end
 
   def update
