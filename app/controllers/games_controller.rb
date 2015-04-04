@@ -12,12 +12,14 @@ class GamesController < ApplicationController
   end
 
   def show
+
   end
 
   # creates new game object from params hash
   def create
   	@game = Game.new(game_params)
-  	if @game.save
+
+    if @game.save
   		redirect_to @game, :notice => "Congrats! You're hosting a game!"
       # idea: have :notice display something like 
       # "Congrats! Your #{@game.game_category} is scheduled for #{@game.date} at #{@game.time}."

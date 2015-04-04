@@ -14,7 +14,6 @@ class Game < ActiveRecord::Base
   def has_open_spots?
     open_spots > 0
   end
-
   # returns number of open spots
   def open_spots
     if has_reservations?
@@ -22,6 +21,10 @@ class Game < ActiveRecord::Base
     else
       self.player_limit
     end
+  end
+
+  def game_categories
+    ["Bocce Courts", "Basketball Courts", "Tennis Courts", "Football Fields", "Ice Skating Rinks", "Playgrounds", "Baseball Fields", "Beaches", "Nature Centers", "Recreation Centers", "Pools"]
   end
 
 end
