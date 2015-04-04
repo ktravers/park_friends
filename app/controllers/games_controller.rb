@@ -63,3 +63,9 @@ class GamesController < ApplicationController
     end
 
 end
+<<<<<<< HEAD
+
+
+  
+=======
+>>>>>>> b7af819fde299d76da0bb15a366c02f1bed73c23
