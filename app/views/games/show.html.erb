@@ -10,24 +10,23 @@
   <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li><!-- google map -->
   <li>Players:</li>
   <li><% @game.players.each do |p| %>
-    <%= image_tag "#{p.profile_picture}", alt: "#{p.full_name}" %>
-    <% end %>
+      <%= image_tag "#{p.profile_picture}", alt: "#{p.full_name}" %>
+      <%= p.full_name %> |
+      <% end %>
 
-    <% if @game.has_open_spots? %>
+      <% if @game.has_open_spots? %>
       <%= link_to "Invite some friends!", game_path(@game) if !player_not_signed_up? %><!-- todo: link goes to ActionMailer -->
       <%= render 'reservation' if player_not_signed_up? %>
-    <% end %> 
+      <% end %> 
   </li>
-
   <li>Open spots: <%= @game.has_open_spots? ? @game.open_spots : "Sorry, this game is full." %></li>
-
   <li>Additional info: <%= @game.additional_info %></li>
   <!-- weather -->
 </ul>
 
 <% if current_user_is_host? %>
-  <%= link_to "Edit", edit_game_path %> | 
-  <%= link_to 'Delete', @game, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+<%= link_to "Edit", edit_game_path %> | 
+<%= link_to 'Delete', @game, method: :delete, data: { confirm: 'Are you sure?' } %> | 
 <% end %>
 
 

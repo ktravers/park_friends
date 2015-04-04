@@ -13,9 +13,12 @@
 <div id="friends-list">
   <h2>Friends</h2>
   <ul>
-    <!-- @users.sample(5).each do |user| -->
-    <!-- show user info -->
-    <!-- end -->
+    <% @users.sample(5).each do |user| %>
+    <li>
+    <%= image_tag "#{user.profile_picture}", alt: "#{user.full_name}" %>
+    <%= link_to "#{user.full_name}", user_path(user) %><br>
+    </li>
+    <% end %>
   </ul>
 </div>
 

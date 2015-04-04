@@ -15,8 +15,8 @@
   <% end %>
 
   <%= f.fields_for :reservations, Reservation.new do |rf| %>
-    <%= rf.hidden_field :game_id, value: @game.id %>
-    <%= rf.hidden_field :player_id, value: current_user.id %>
+  <%= rf.hidden_field :game_id, value: @game.id %>
+  <%= rf.hidden_field :player_id, value: current_user.id %>
   <%= f.submit "Sign Up" %>
   <% end %>
 <% end %>
