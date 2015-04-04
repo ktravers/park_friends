@@ -7,6 +7,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    if @user.update(user_params)
+      redirect_to @user, :notice => "Profile updated."
+    else
+      redirect_to @user, :notice => "Sorry, unable to update user."
+    end
   end
 
   private

@@ -1,39 +1,22 @@
 <div class="user-form">
+<%= simple_form_for(@user) do |f| %>
+   <%= f.label :first_name %><br>
+   <%= f.text_field :first_name, placeholder: "Leslie" %><br>
+   <%= f.label :last_name %><br>
+   <%= f.text_field :last_name, placeholder: "Knope" %><br>
+   <%= f.label :email %><br>
+   <%= f.text_field :email, placeholder: "leslie.knope@pawneeparksandrec.gov" %><br>
+   <%= f.label :zipcode %><br>
+   <%= f.text_field :zipcode, placeholder: "10001" %><br>
+   <%= f.label "Profile Picture URL" %><br>
+   <%= f.text_field :profile_picture, placeholder: "Enter a valid image url." %><br>
+   <%= f.label :favorite_games %><br>
+   <%= f.text_field :favorite_games, placeholder: "What are some of your favorite games?"%><br>
+</div>
 
-<%= simple_form_for(@game) do |f| %>
-
-   <%= f.hidden_field :host_id, value: @user.id %>
-   <!-- hidden field passes host_id in params -->
-
-   <%= f.label :host %><br>
-   <%= f.text_field :host, value: "#{@user.first_name} #{@user.last_name}" %><br>
-
-   <%= f.label :description %><br>
-   <%= f.text_field :description %><br>
-
-   <%= f.label :game_category %><br>
-   <%= f.select :game_category, collection: @game.game_categories.keys %><br>
-
-   <%= f.label :date %><br>
-   <%= f.date_field :date, min: Date.today, placeholder: Date.today %><br> 
-   <!-- placeholder set to Date.today; cannot choose date in the past -->
-
-   <%= f.label :time %><br>
-   <%= f.time_field :time, placeholder: Time.now.localtime.strftime("%H:%M")  %><br> 
-   <!-- TODO: make this work: placeholder value formatted as hour:minute am/pm -->
-
-   <%= f.label :player_limit %><br>
-   <%= f.text_field :player_limit %><br>
-
-   <%= f.label :location %><br>
-   <%= f.input :park_id, collection: Park.all.order("name") %><br> 
-
-   <%= f.label :additional_info %><br>
-   <%= f.text_field :additional_info %><br> 
- </div>
-
- <div class="game-form-button">
-   <%= f.submit %>
- </div>
+<div class="user-form-button">
+<%= f.submit %>
+</div>
 
 <% end %>
+ 
