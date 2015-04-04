@@ -29,8 +29,6 @@
 
    <%= f.label :location %><br>
    <%= f.input :park_id, label: false, collection: Park.select("name").order("name") %><br> 
-   <!-- todo: make this a drop down: options are parks, filtered by game_category -->
-   <!-- use f.select? f.collection_select? -->
 
    <%= f.label :additional_info %><br>
    <%= f.text_field :additional_info %><br> 
