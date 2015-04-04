@@ -19,7 +19,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#" id="notice"><%= notice %></a></li>
           <% if request.path == root_path || !logged_in? %>
-            <li><%= link_to 'Existing Users | Login', 'auth/facebook' %></li>
+            <li><%= link_to 'Existing Users | Login', login_path %></li>
           <% else %>
             <li><%= link_to "Hi #{current_user.first_name}!", "#" %></li>
             <li><%= link_to "Settings", edit_user_path(current_user) %></li>
