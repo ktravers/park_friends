@@ -14,22 +14,16 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
-  # def show
-  #   @src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCZfSNT7EXqCTmOd2iARQdDr6znf9IiAlc&q="+"#{"Central Park".gsub(" ", "+")},New+York+NY"
-  # end
-  
   def new
   	@game = Game.new
   end
 
   # creates new game object from params hash
   def create
-    # binding.pry
   	@game = Game.new(game_params)
-
     if @game.save
       @user.host = true
-  		redirect_to @game, :notice => "Congrats! You're hosting a game!"
+  		redirect_to @game, :notice => "Congrats! You're hosting a game."
       # idea: have :notice display include "Now invite some friends!" => as a link to our mailer
   	end
   end
@@ -69,6 +63,9 @@ class GamesController < ApplicationController
     end
 
 end
+<<<<<<< HEAD
 
 
   
+=======
+>>>>>>> b7af819fde299d76da0bb15a366c02f1bed73c23
