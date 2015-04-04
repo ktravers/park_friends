@@ -1,11 +1,13 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy, :invite]
+  before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:index, :new, :create, :edit, :update]
   before_action :login_required, only: [:edit, :update, :new, :create, :destroy, :invite]
 
   def invite
-    # @user = User.find(params[:game][:user_id])
+    @game = Game.find(params[:game_id])
+    @user = User.find(params[:user_id])
     UserMailer.invitation(@game, @user).deliver
+    redirect_to @game, :notice => "Invitation sent!"
   end
 
   def index
@@ -22,6 +24,7 @@ class GamesController < ApplicationController
   	@game = Game.new(game_params)
 
     if @game.save
+      @user.host = true
   		redirect_to @game, :notice => "Congrats! You're hosting a game!"
       # idea: have :notice display include "Now invite some friends!" => as a link to our mailer
   	end

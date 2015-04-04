@@ -13,8 +13,11 @@ class UserMailer < ApplicationMailer
   def invitation(game, user)
     @user = user
     @game = game
+    @park = Park.find(@game.park_id)
+    @host = User.find(@game.host_id)
     mail subject: "Invite : #{@game.description} | #{@game.date.strftime("%A, %B %e")}",
-    reply_to: "#{@user.email}"
+    reply_to: "#{@user.email}",
+    from: "#{@user.email}"
   end
 
 end
