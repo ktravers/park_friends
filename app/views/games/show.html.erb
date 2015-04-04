@@ -1,21 +1,23 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= @game.description %></h1>
 
 <ul>
   <li>Category: <%= @game.game_category %></li>
-  <li>Host: <%= link_to "#{@game.host.full_name}", user_path(@game.host_id) %>
+  <% if logged_in? %>
+  <li>Host: <%= link_to "#{@game.host.full_name}", user_path(@game.host_id) %></li>
+  <% else %>
+  <li>Host: <%= @game.host.full_name %></li>
+  <% end %>
   <li>Date: <%= @game.date.strftime("%A, %B %e") %></li>
   <li>Time: <%= @game.time.strftime("%l:%M %p") %></li>
   <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li><!-- google map -->
   <li>Players:</li>
   <li><% @game.players.each do |p| %>
       <%= image_tag "#{p.profile_picture}", alt: "#{p.full_name}" %>
-      <%= p.full_name %> |
+      <%= link_to "#{p.full_name}", user_path(p) if logged_in? %>
       <% end %>
 
       <% if @game.has_open_spots? %>
-        <% if !player_not_signed_up? %>
+        <% if logged_in? && !player_not_signed_up? %>
           <%= link_to "Invite some friends!", invite_path(:game_id => @game.id, :user_id => current_user.id) %>
          
           <!-- todo: add ability to select friends to email -->

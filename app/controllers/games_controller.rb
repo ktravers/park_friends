@@ -20,12 +20,10 @@ class GamesController < ApplicationController
 
   # creates new game object from params hash
   def create
-    # binding.pry
   	@game = Game.new(game_params)
-
     if @game.save
       @user.host = true
-  		redirect_to @game, :notice => "Congrats! You're hosting a game!"
+  		redirect_to @game, :notice => "Congrats! You're hosting a game."
       # idea: have :notice display include "Now invite some friends!" => as a link to our mailer
   	end
   end
