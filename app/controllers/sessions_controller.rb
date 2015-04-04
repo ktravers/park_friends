@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
     @user = User.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"]) || User.create_with_omniauth(auth_hash)  
     login(@user)
     redirect_to dashboard_path, :notice => "Signed in!"
+
+    
   end
 
   # clears all session information, effectively logging the user out

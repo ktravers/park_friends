@@ -62,3 +62,6 @@ class GamesController < ApplicationController
     end
 
 end
+
+["test", "1", "2"].each do |array|
+  

@@ -9,7 +9,8 @@
       <% else %>
         Hi <%= link_to "#{current_user.first_name}", user_path(current_user) %>! | 
         <%= link_to "Dashboard", dashboard_path %> | 
-        <%= link_to "Calendar", games_path %> | Sign Out
+        <%= link_to "Calendar", games_path %> | 
+        <%= link_to "Log Out", signout_path %> 
       <% end %>
     </li>
   </ul>
