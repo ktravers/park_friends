@@ -7,7 +7,6 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  min-height: 2000px;
 }
 
 .navbar-static-top {
@@ -23,6 +22,55 @@ body {
   background-color: #f5f5f5;
 }
 
+/* Welcome cover styles
+-------------------------------------------------- */
+.cover-container {
+  padding-top: 6em;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: transparent;
+  border: 1px solid #000;
+}
+
+.cover {
+  padding: 0 20px;
+}
+.cover-heading {
+  font-size: 8em;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  /* Handle the widths */
+  .cover-container {
+    vertical-align: middle;
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .cover-container {
+    width: 700px;
+  }
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -38,6 +86,29 @@ body > .container {
   padding-right: 15px;
   padding-left: 15px;
 }
-code {
-  font-size: 80%;
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+}
+
+footer {
+  text-align: center;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+footer li:first-child {
+  padding-left: 0;
 }
