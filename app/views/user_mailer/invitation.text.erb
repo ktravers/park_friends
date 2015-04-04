@@ -1,0 +1,17 @@
+Hi < friend >,
+
+Join me this <%= @game.date.strftime("%A") %> at <%= @park.name %> for fun game of <%= @game.game_category %>. You can sign up here: <%= "#{game_path(@game)}" %>. Here's the full details:
+
+<%= @game.description %> 
+Hosted by: <%= @host.full_name %>
+Activity: <%= @game.game_category %>
+Location: <%= @park.name %>
+Date: <%= @game.date.strftime("%A, %B %e") %>
+Time: <%= @game.time.strftime("%l:%M %p") %>
+Players signed up so far: <% @game.players.collect do |p| %><%= p.full_name %><% end.join(", ") %>
+Other info: <%= @game.additional_info %>
+
+See you there!
+
+♥ <%= @user.full_name %>
+

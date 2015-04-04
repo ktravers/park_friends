@@ -16,26 +16,31 @@
 
       <% if @game.has_open_spots? %>
         <% if !player_not_signed_up? %>
+          <%= link_to "Invite some friends!", invite_path(:game_id => @game.id, :user_id => current_user.id) %>
+         
+          <!-- todo: add ability to select friends to email -->
 
-          <%#= form_for(@game) do |f| %>
-            <%#= f.fields_for :users, current_user do |uf| %>
-            <%#= uf.hidden_field :user_id, value: current_user.id %><!-- todo: pass correct params; user fields_for? -->
+          <div invite-form><!-- style="display:hidden", then unhide on #invite link click above -->
+            <%#= simple_form_for(@game) do |f| %>
+            <%#= f.hidden_field :user_id, value: current_user.id %>
+            <%#= f.label "Select friends to invite:" %>
+            <%#= f.input :players, label: false, check_boxes: User.all %>
             <%#= f.submit "Invite some friends!", invite_path %>
             <%# end %>
-          <%= link_to "Invite some friends!", invite_path %><!-- todo: pass user param info here? -->
+          </div>
+          
         <% end %>
       <%= render 'reservation' if player_not_signed_up? %>
       <% end %> 
   </li>
   <li>Open spots: <%= @game.has_open_spots? ? @game.open_spots : "Sorry, this game is full." %></li>
   <li>Additional info: <%= @game.additional_info %></li>
-  <!-- weather -->
+  <!-- todo: add weather -->
 </ul>
 
 <% if current_user_is_host? %>
 <%= link_to "Edit", edit_game_path %> | 
 <%= link_to 'Delete', @game, method: :delete, data: { confirm: 'Are you sure?' } %> | 
 <% end %>
-
 
 <%= link_to "Back to games", games_path %>

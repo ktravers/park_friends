@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :games
 
+  # ActionMailer route for invite email
   get 'invite' => 'games#invite'
   
   # facebook-omniauth routes for login/logout
