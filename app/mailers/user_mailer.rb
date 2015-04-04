@@ -1,12 +1,12 @@
 class UserMailer < ApplicationMailer
-  # move to background tasks
+  # move to background tasks?
 
+  # sends confirmation email to new users only
   def signup_confirmation(user)
-    binding.pry
     @user = user
-    mail to: user.email,
+    mail to: @user.email,
     subject: "Park Friends | Thank you for signing up!",
-    reply_to: "hello@parkfriends.com"
+    reply_to: "hello.park.friends@gmail.com"
   end
 
   # todo : add ability to select friends to email (third argument = friends_array)
