@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:new, :create, :edit, :update]
+  before_action :set_user, only: [:index, :new, :create, :edit, :update]
   before_action :login_required, only: [:edit, :update, :new, :create, :destroy]
 
   def index
@@ -21,7 +21,7 @@ class GamesController < ApplicationController
   	end
   end
 
-  # update game settings
+  # update game attributes
   def update
     if @game.update(game_params)
       redirect_to :back, :notice => "Game updated."
@@ -30,6 +30,7 @@ class GamesController < ApplicationController
     end
   end
 
+  # destroy game and dependents (reservations)
   def destroy
     @game.destroy
     respond_to do |format|

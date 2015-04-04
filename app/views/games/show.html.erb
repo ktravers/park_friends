@@ -13,7 +13,7 @@
       <img src="<%= p.profile_picture %>"><%= "#{p.first_name} #{p.last_name}" %>
       <% end %>
 
-      <% if @game.has_open_spots? && logged_in? %>
+      <% if player_not_signed_up? && @game.has_open_spots? %>
         <%= render 'reservation' %>
       <% end %> 
   </li>
@@ -30,7 +30,7 @@
   <!-- weather -->
 </ul>
 
-<% if current_user.id == @game.host_id && logged_in? %>
+<% if current_user_is_host? %>
   <%= link_to "Edit", edit_game_path %> | 
   <%= link_to 'Delete', @game, method: :delete, data: { confirm: 'Are you sure?' } %> | 
 <% end %>

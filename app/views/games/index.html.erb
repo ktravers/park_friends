@@ -4,7 +4,14 @@
   <li><%= "#{game.date.strftime("%A, %B %e")}, #{game.time.strftime("%l:%M %p")}" %> |
       <%= "#{game.description}" %> <%= " (#{game.game_category})" %> |
       <%= game.park.name %>
-      <%= link_to "Sign Up", game %>
+      
+      <%# if player_not_signed_up? && !current_user_is_host? %><!-- todo: get helper method to work -->
+      <% if logged_in? && !game.players.include?(current_user) && current_user.id != game.host_id %>
+        <%= link_to "Sign Up", game %>
+      <% else %>
+        <%= link_to "View details", game %>
+      <% end %>
+      
   <% end %>
   </li>
 </ul>
