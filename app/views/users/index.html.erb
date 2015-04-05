@@ -1,3 +1,23 @@
-<!-- @users.each do |user| -->
-<!-- user.profile_picture | user.first_name user.last_name | user.description | user.favorite_games -->
-<!-- end -->
+<div class="users-index">
+  <div class="container">
+    <h1>parksters</h1>
+      <div id="friends-list">
+        <% @users.each do |user| %>
+        <% if user.id != current_user.id %>
+          <div class="col-md-1 friend">
+            <div><%= image_tag "#{user.profile_picture}", alt: "#{user.full_name}" %></div>
+            <div><%= link_to "#{user.full_name}", user_path(user) %></div>
+            <p>Favorite Games:<br><%= user.favorite_games %></p>
+          </div><!-- end of .friend card -->
+        <% end %>
+      <% end %>
+    </div><!-- end of .friends-list -->
+
+    <% if logged_in? %>
+    <div class="btn btn-default back">
+      <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+      <%= link_to "back to dashboard", dashboard_path %>
+    </div>
+    <% end %>
+  </div><!-- end of .container -->
+</div><!-- end of .users-index -->

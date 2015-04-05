@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :zipcode
-      t.string :profile_picture, default: "images/default-profile-pic.png"
+      t.string :profile_picture, default: "default-profile-pic.png"
       t.string :favorite_games
       t.boolean :host
     end

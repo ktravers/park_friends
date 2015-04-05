@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 20150401021653) do
     t.string  "last_name"
     t.string  "email"
     t.string  "zipcode"
-    t.string  "profile_picture"
+    t.string  "profile_picture"  default: "default-profile-pic.png"
     t.string  "favorite_games"
-    t.boolean "host"
+    t.boolean "host"             default: false 
     t.string  "provider",        default: "facebook"
     t.string  "uid"
     t.string  "token"

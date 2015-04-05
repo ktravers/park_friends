@@ -1,9 +1,11 @@
 /* Dashboard page styling
 -------------------------------------------------- */
+body > .users-index > .container,
 body > .dashboard > .container {
   padding: 0px 15px 0;
   color: #003333;
 }
+.users-index h1,
 .dashboard h1 {
   font-size: 2.5em;
   font-weight: bold;
@@ -11,10 +13,12 @@ body > .dashboard > .container {
   float: left;
   margin-bottom: 1.5em;
 }
+.users-index .row,
 .dashboard .row {
   margin-right: 0;
   margin-left: 0;
 }
+.users-index a,
 .dashboard a {
   text-decoration: none;
 }
@@ -36,7 +40,6 @@ body > .dashboard > .container {
   background: rgba(51, 153, 255, 0.75);
   border: 1px solid #3399ff;
 }
-
 /* Game list styling
 -------------------------------------------------- */
 .dashboard #filter-game-list {
@@ -74,6 +77,7 @@ body > div.dashboard > div > div:nth-child(7) {
   margin: 1.5em 0 0.5em 0;
   font-size: 2em;
 }
+.users-index div.col-md-1.friend,
 .dashboard div.col-md-1.friend {
   display: inline;
   font-size: 1.25em;
@@ -90,13 +94,13 @@ body > div.dashboard > div > div:nth-child(7) {
   -moz-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1);
   box-shadow: 0px 0px 10px 5px rgba(255,255,255,1);*/
 }
+.users-index div.col-md-1.friend > div, 
 .dashboard div.col-md-1.friend > div {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   /*background-color: #3399ff;*/
 }
-.dashboard div.col-md-1.friend a {
-}
+.users-index div.col-md-1.friend p,
 .dashboard div.col-md-1.friend p {
   font-size: 0.75em;
   margin-top: 0.5em;

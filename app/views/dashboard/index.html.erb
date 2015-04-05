@@ -10,17 +10,17 @@
         <div><a href="#">Games I'm Playing</a></div>
         <div><a href="#">Games I'm Hosting</a></div>
         <div><a href="#">All</a></div>
-      </div>
-    </div>
+      </div><!-- end of .row filter buttons -->
+    </div><!-- end of #filter-game-list -->
     <div id="games-list">  
       <% current_user.upcoming_games_all.each do |game| %>
       <div class="row game">
         <div class="col-md-3 date"><%= game.date.strftime("%A, %B %e") %></div>
         <div class="col-md-6 description"><%= link_to "#{game.description}", game %></div>
         <div class="col-md-3 location"><%= game.park.name %></div>
-      </div>
+      </div><!-- end of .row.game -->
       <% end %>
-    </div>
+    </div><!-- end of .games-list -->
       <div>Friends</div>
       <div id="friends-list">
         <% @users.sample(10).each do |user| %>
@@ -29,9 +29,9 @@
             <div><%= image_tag "#{user.profile_picture}", alt: "#{user.full_name}" %></div>
             <div><%= link_to "#{user.full_name}", user_path(user) %></div>
             <p>Favorite Games:<br><%= user.favorite_games %></p>
-          </div>
+          </div><!-- end of .friend card -->
         <% end %>
       <% end %>
-    </div>
-  </div>
-</div>
+    </div><!-- end of .friends-list -->
+  </div><!-- end of .container -->
+</div><!-- end of .dashboard -->
