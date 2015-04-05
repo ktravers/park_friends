@@ -30,5 +30,6 @@ class Game < ActiveRecord::Base
       "Tennis"  => "Tennis Courts", "Other" => ["Playgrounds", "Beaches", "Nature Centers", "Recreation Centers"] }
     # ["Bocce Courts", "Basketball Courts", "Tennis Courts", "Football Fields", "Ice Skating Rinks", "Playgrounds", "Baseball Fields", "Beaches", "Nature Centers", "Recreation Centers", "Pools"]
   end
-
 end
+
+

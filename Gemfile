@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "figaro"
 gem 'simple_form'
 gem 'omniauth-facebook'
+gem 'wunderground'
 
 
 group :development, :test do

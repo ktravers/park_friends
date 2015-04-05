@@ -1,3 +1,5 @@
+
+
 <h1><%= @game.description %></h1>
 
 <ul>
@@ -10,13 +12,15 @@
   <li>Date: <%= @game.date.strftime("%A, %B %e") %></li>
   <li>Time: <%= @game.time.strftime("%l:%M %p") %></li>
   <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li>
+  <li> Weather: <%= @weather.forecast_for("WA","Spokane")%> </li>
 
-<iframe
+ 
+ <iframe
   width="600"
   height="450"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyARuFeC9Bt_vl4Icq0dGRoEzwJb4m2FhXc&q=Space+Needle,Seattle+WA">
-</iframe>
+</iframe> 
 
 
   <li>Players:</li>
@@ -49,9 +53,12 @@
   <!-- todo: add weather -->
 </ul>
 
+
 <% if current_user_is_host? %>
 <%= link_to "Edit", edit_game_path %> | 
 <%= link_to 'Delete', @game, method: :delete, data: { confirm: 'Are you sure?' } %> | 
 <% end %>
 
 <%= link_to "Back to games", games_path %>
+
+
