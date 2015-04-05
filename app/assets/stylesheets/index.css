@@ -1,3 +1,5 @@
+/* Index page styling - Rows
+-------------------------------------------------- */
 body > .index-page > .container {
   padding: 0px 15px 0;
   color: #003333;
@@ -27,6 +29,9 @@ body > .index-page > .container {
   -moz-border-radius: 5px;
   clear: both;
 }
+
+/* Button styling
+-------------------------------------------------- */
 .index-page div.btn.btn-default.small a,
 .index-page div.btn.btn-default.back a {
   color: #fff;
@@ -40,12 +45,14 @@ body > .index-page > .container {
   font-size: 1.25em;
   max-width: 250px;
   float: left;
+  border: 1px solid #3399ff;
 }
 .index-page div.btn.btn-default.small {
   margin-right: 2em;
   background-color: #3399ff;
   width: 100px;
   float: right;
+  border: 1px solid #3399ff;
 }
 .index-page .park div.btn.btn-default.small {
   width: auto;

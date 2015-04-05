@@ -1,3 +1,5 @@
+/* Dashboard page styling
+-------------------------------------------------- */
 body > .dashboard > .container {
   padding: 0px 15px 0;
   color: #003333;
@@ -16,6 +18,8 @@ body > .dashboard > .container {
 .dashboard a {
   text-decoration: none;
 }
+/* Nav buttons
+-------------------------------------------------- */
 .dashboard div.col-md-3.btn a {
   color: #fff;
 }
@@ -32,6 +36,9 @@ body > .dashboard > .container {
   background: rgba(51, 153, 255, 0.75);
   border: 1px solid #3399ff;
 }
+
+/* Game list styling
+-------------------------------------------------- */
 .dashboard #filter-game-list {
   font-size: 2em;
   clear: both;
@@ -61,6 +68,8 @@ body > .dashboard > .container {
   -moz-border-radius: 5px;
   clear: both;
 }
+/* Friend card styling
+-------------------------------------------------- */
 body > div.dashboard > div > div:nth-child(7) {
   margin: 1.5em 0 0.5em 0;
   font-size: 2em;
