@@ -45,9 +45,13 @@ class User < ActiveRecord::Base
     self.host
   end
 
+  def upcoming_games_all
+    (upcoming_games_host | upcoming_games_player).sort
+  end
+
   # returns array of upcoming games user is hosting
   def upcoming_games_host
-    self.games.all.select {|g| g.date >= Date.today}
+    self.games.all.select {|g| g.date >= Date.today}.sort
   end
 
   # returns array of upcoming games user is playing
@@ -56,7 +60,7 @@ class User < ActiveRecord::Base
     self.reservations.each do |r|
       games << r.game if r.game.date >= Date.today
     end
-    games
+    games.sort
   end
 
   # idea: have 2 categories: 
