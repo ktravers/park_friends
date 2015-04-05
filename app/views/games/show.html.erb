@@ -12,7 +12,7 @@
   <li>Date: <%= @game.date.strftime("%A, %B %e") %></li>
   <li>Time: <%= @game.time.strftime("%l:%M %p") %></li>
   <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li>
-  <li> Weather: <%= @weather.forecast_for("WA","Spokane")%> </li>
+  <!-- <li> Weather: <%#= @weather.forecast_for("WA","Spokane")%> </li> -->
 
   <li>Players:</li>
   <li><% @game.players.each do |p| %>

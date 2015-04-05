@@ -31,5 +31,3 @@ class Game < ActiveRecord::Base
     # ["Bocce Courts", "Basketball Courts", "Tennis Courts", "Football Fields", "Ice Skating Rinks", "Playgrounds", "Baseball Fields", "Beaches", "Nature Centers", "Recreation Centers", "Pools"]
   end
 end
-
-

@@ -45,6 +45,7 @@ class User < ActiveRecord::Base
     self.host
   end
 
+  # returns array of all upcoming games user is involved with (as a host or player)
   def upcoming_games_all
     (upcoming_games_host | upcoming_games_player).sort
   end
@@ -54,7 +55,7 @@ class User < ActiveRecord::Base
     self.games.all.select {|g| g.date >= Date.today}.sort
   end
 
-  # returns array of upcoming games user is playing
+  # returns array of upcoming games user is playing (as a non-host)
   def upcoming_games_player
     games = []
     self.reservations.each do |r|
@@ -62,9 +63,4 @@ class User < ActiveRecord::Base
     end
     games.sort
   end
-
-  # idea: have 2 categories: 
-  # 1. games i'm hosting
-  # 2. all my games, with games user is hosting flagged "host"
-
 end
