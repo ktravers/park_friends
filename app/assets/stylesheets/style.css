@@ -3,14 +3,29 @@
 html {
   position: relative;
   min-height: 100%;
+
 }
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background: url("background.png");
+  background-size: cover;
 }
 
 .navbar-static-top {
   margin-bottom: 19px;
+}
+
+.navbar-static-top img {
+  width: 40px;
+  height: 40px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+}
+
+.navbar-static-top li img {
+  margin-top: 5px;
 }
 
 .footer {
