@@ -18,6 +18,21 @@ body > .index-page > .container {
 .index-page a {
   text-decoration: none;
 }
+
+.users-index div.col-md-1.friend {
+  display: inline;
+  font-size: 1.25em;
+  width: 12.5em;
+  height: 16em;
+  margin: 0 0.50em 1em 0em;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  text-align: center;
+}  
+.users-index div#friends-list ~ div.col-md-1.friend,
 .index-page div#nyc-parks-list .row,
 .index-page div#calendar-games-list .row {
   padding: 1.5em 0 1.5em 0;
@@ -29,9 +44,13 @@ body > .index-page > .container {
   -moz-border-radius: 5px;
   clear: both;
 }
+#friends-list > div:nth-child(1) {
+  clear:both;
+}
 
 /* Button styling
 -------------------------------------------------- */
+.users-index div.btn.btn-default.back a,
 .index-page div.btn.btn-default.small a,
 .index-page div.btn.btn-default.back a {
   color: #fff;
@@ -39,6 +58,7 @@ body > .index-page > .container {
 .index-page div.btn.btn-default.small a {
   font-weight: 300;
 }
+.users-index div.btn.btn-default.back,
 .index-page div.btn.btn-default.back {
   margin: 1em 0em 1.5em 0em;
   background-color: #3399ff;
@@ -65,10 +85,4 @@ body > .index-page > .container {
 .index-page div.btn.btn-default.back:active {
   background: rgba(51, 153, 255, 0.75);
   border: 1px solid #3399ff;
-}
-.glyphicon {
-  color: #fff;
-  font-size: 0.75em;
-  padding-right: 6px;
-  top: 0;
 }

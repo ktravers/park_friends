@@ -1,18 +1,23 @@
-/* Sticky footer styles
+/* Default styling for site
 -------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
 }
+body.welcome {
+  background: url("background2.jpg");
+  background-size: cover;
+}
 body {
   margin-bottom: 90px; /* Margin bottom by footer height */
   background-color: #e7e7e7;
-  /*background: url("background.png");*/
-  /*background-size: cover;*/
+  color: #006666;
 }
-/*a {
-  color:#3399ff;
-}*/
+body > .container {
+  padding: 60px 15px 0;
+}
+/* Custom welcome button
+-------------------------------------------------- */
 div#welcome-button .btn-default {
   color: #fff;
   text-shadow: none; /* Prevent inheritence from `body` */
@@ -36,6 +41,8 @@ div#welcome-button a.btn.btn-lg.btn-default:active,
 div#welcome-button a.btn.btn-lg.btn-default:focus {
   color: #fff;
 }
+/* Navbar styling
+-------------------------------------------------- */
 .navbar-static-top {
   margin-bottom: 19px;
   background-color: #006666;
@@ -46,6 +53,12 @@ div#welcome-button a.btn.btn-lg.btn-default:focus {
   border-radius: 150px;
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
+}
+.navbar-default .navbar-collapse {
+  border-color: #006666;
+}
+.navbar-default {
+  border-color: #006666;
 }
 body > nav > div > div.navbar-header > a.navbar-brand,
 #navbar > ul.nav.navbar-nav > li > a {
@@ -62,15 +75,6 @@ body > nav > div > div.navbar-header > a.navbar-brand:hover,
   font-size: 1.75em;
   font-weight: bold;
   margin: -3px 0 2px 0;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 90px; /* Set the fixed height of the footer here */
-  background-color: #006666;
-  color: #fff;
-  text-align: center;
 }
 /* Welcome cover styles
 -------------------------------------------------- */
@@ -89,16 +93,18 @@ body > nav > div > div.navbar-header > a.navbar-brand:hover,
   padding: 0 20px;
 }
 body > div > p.lead {
-  color: #003333;
+  color: #006666;
 }
 .cover-heading {
   font-size: 8em;
-  color: #003333;
+  color: #006666;
 }
 .cover .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
 }
+/* Responsive styling
+-------------------------------------------------- */
 @media (min-width: 768px) {
   /* Handle the widths */
   .cover-container {
@@ -111,8 +117,16 @@ body > div > p.lead {
     width: 700px;
   }
 }
-body > .container {
-  padding: 60px 15px 0;
+/* Footer styles
+-------------------------------------------------- */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px; /* Set the fixed height of the footer here */
+  background-color: #006666;
+  color: #fff;
+  text-align: center;
 }
 .container .text-muted a,
 .container .text-muted {
@@ -145,7 +159,21 @@ footer li {
 footer li:first-child {
   padding-left: 0;
 }
+/* Miscellaneous detail styling
+-------------------------------------------------- */
+.glyphicon {
+  color: #fff;
+  font-size: 0.75em;
+  padding-right: 6px;
+  top: 0;
+}
 .glyphicon-heart {
   color:#3399ff; 
   padding-right: 0;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: #3399ff;
+  background-image: -webkit-linear-gradient(left, #ccc, #3399ff, #ccc);
 }
