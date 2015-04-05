@@ -5,7 +5,7 @@ html {
   min-height: 100%;
 }
 body.welcome {
-  background: url("background2.jpg");
+  background: url("background.jpg");
   background-size: cover;
 }
 body {
