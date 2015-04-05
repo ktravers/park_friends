@@ -1,15 +1,27 @@
-<h1>NYC Parks</h1>
+<div class="index-page">
+  <div class="container">
 
-<!-- add filters by activity -->
+    <h1>NYC Parks</h1>
 
-<ul>
-  <% @parks.each do |park| %>
-  <li><%= park.name %> |
-      <%= park.location %> |
-      <%= park.activity %> |
-      <%= link_to "See all upcoming games at #{park.name}", "#" %><!-- use form to pass park_id to games index? -->    
-  <% end %>
-  </li>
-</ul>
+    <!-- add filters by activity -->
 
-<%= link_to "Back to dashboard", dashboard_path if logged_in? %>
+    <div id="nyc-parks-list"> 
+      <% @parks.each do |park| %>
+      <div class="index park row">
+        <div class="col-md-3 name"><%= park.name %></div>
+        <div class="col-md-4 location">
+        <%= link_to "#{park.location}", "https://www.google.com/maps/place/#{park.location.gsub(" ","+")}+NY" if park.location %></div>
+        <div class="col-md-2 activity"><%= park.activity %></div>
+        <div class="col-md-4 btn btn-default small">
+        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+        <%= link_to "Upcoming Games", "#" %></div><!-- use form to pass park_id to games index? --> 
+      </div><!-- end #nyc-parks-list-->  
+      <% end %>
+    </div><!-- end .park.row -->
+
+    <div class="btn btn-default back">
+      <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+      <%= link_to "back to dashboard", dashboard_path if logged_in? %>
+    </div>
+  </div><!-- end .container-->
+</div><!-- end .index-page -->

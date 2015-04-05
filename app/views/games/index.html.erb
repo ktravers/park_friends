@@ -1,19 +1,28 @@
-<h1>Games</h1>
-<ul>
-  <% @games.each do |game| %>
-  <li><%= "#{game.date.strftime("%A, %B %e")}, #{game.time.strftime("%l:%M %p")}" %> |
-      <%= "#{game.description}" %> <%= " (#{game.game_category})" %> |
-      <%= game.park.name %>
-      
-      <%# if player_not_signed_up? && !current_user_is_host? %><!-- todo: get helper method to work -->
-      <% if logged_in? && !game.players.include?(current_user) && current_user.id != game.host_id %>
-        <%= link_to "Sign Up", game %>
-      <% else %>
-        <%= link_to "View details", game %>
-      <% end %>
-      
-  <% end %>
-  </li>
-</ul>
+<div class="index-page">
+  <div class="container">
 
-<%= link_to "Back to dashboard", dashboard_path if logged_in? %>
+    <h1>games calendar</h1>
+
+    <div id="calendar-games-list">  
+      <% @games.each do |game| %>
+        <div class="calendar game row">
+          <div class="col-md-2 date"><%= game.date.strftime("%A, %B %e") %></div>
+          <div class="col-md-1 time"><%= game.time.strftime("%l:%M %p") %></div>
+          <div class="col-md-3 description"><%= link_to "#{game.description}", game %></div>
+          <div class="col-md-1 category"><%= game.game_category %></div>
+          <div class="col-md-3 park"><%= game.park.name %></div>
+          <% if logged_in? && !game.players.include?(current_user) && current_user.id != game.host_id %>
+          <div class="col-md-1 btn btn-default small"><%= link_to "Sign Up", game %></div>
+          <% else %>
+          <div class="col-md-2 btn btn-default small"><%= link_to "View details", game %></div>
+          <% end %>
+        </div><!-- end .calendar.row.game -->
+      <% end %>
+    </div><!-- end #calendar-games-list -->
+
+    <div class="btn btn-default back">
+      <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+      <%= link_to "back to dashboard", dashboard_path if logged_in? %>
+    </div>
+  </div><!-- end .container-->
+</div><!-- end .index-page -->

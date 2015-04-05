@@ -17,7 +17,7 @@
       <div class="row game">
         <div class="col-md-3 date"><%= game.date.strftime("%A, %B %e") %></div>
         <div class="col-md-6 description"><%= link_to "#{game.description}", game %></div>
-        <div class="col-md-3 location"><%= Park.find(game.park_id).name %></div>
+        <div class="col-md-3 location"><%= game.park.name %></div>
       </div>
       <% end %>
     </div>
