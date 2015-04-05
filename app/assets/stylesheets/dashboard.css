@@ -1,0 +1,95 @@
+body > .dashboard > .container {
+  padding: 0px 15px 0;
+  color: #003333;
+}
+.dashboard h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  display: inline;
+  float: left;
+  margin-bottom: 1.5em;
+}
+.dashboard .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+.dashboard a {
+  text-decoration: none;
+}
+.dashboard div.col-md-3.btn a {
+  color: #fff;
+}
+.dashboard div.col-md-3.btn {
+  margin: 1em 0em 1em 2em;
+  background-color: #3399ff;
+  font-size: 1.25em;
+  max-width: 200px;
+  float: right;
+}
+.dashboard div.col-md-3.btn:hover,
+.dashboard div.col-md-3.btn:focus,
+.dashboard div.col-md-3.btn:active {
+  background: rgba(51, 153, 255, 0.75);
+  border: 1px solid #3399ff;
+}
+.dashboard #filter-game-list {
+  font-size: 2em;
+  clear: both;
+  margin-bottom: 0.5em;
+}
+.dashboard #filter-game-list div a {
+  text-decoration: underline;
+  font-size: .6em;
+  padding: 0.75em 0.2em 0 2em;
+  float: right;
+}
+.dashboard #filter-game-list div a.list-header {
+  text-decoration: none;
+  font-size: 1em;
+  color: #003333;
+  float: left;
+  padding: 0 0 0 0;
+}
+.dashboard div#games-list .row {
+  font-size: 1.25em;
+  padding: 1.5em 0 1.5em 0;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  clear: both;
+}
+
+body > div.dashboard > div > div:nth-child(7) {
+  margin: 1.5em 0 0.5em 0;
+  font-size: 2em;
+}
+.dashboard div.col-md-1.friend {
+  display: inline;
+  font-size: 1.25em;
+  width: 12.5em;
+  height: 16em;
+  margin: 0 0.50em 2em 0em;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  text-align: center;
+  /*-webkit-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1);
+  box-shadow: 0px 0px 10px 5px rgba(255,255,255,1);*/
+}
+.dashboard div.col-md-1.friend img {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.dashboard div.col-md-1.friend a {
+}
+.dashboard div.col-md-1.friend p {
+  font-size: 0.75em;
+  margin-top: 0.5em;
+}
+
+

@@ -1,40 +1,37 @@
-<img src="<%= current_user.profile_picture %>" alt="<%= current_user.full_name %>">
-
-<h1>Dashboard: <%= current_user.full_name %></h1>
-
-<div id="play-new-game">
-  <h2>Play</h2>
-  <%= link_to 'Host A New Game', new_game_path %><br>
-  <%= link_to 'Join A Game', games_path %>
-</div>
-
-<div id="friends-list">
-  <h2>Friends</h2>
-  <ul>
-    <% @users.sample(5).each do |user| %>
-      <% if user.id != current_user.id %>
-      <li>
-      <%= image_tag "#{user.profile_picture}", alt: "#{user.full_name}" %>
-      <%= link_to "#{user.full_name}", user_path(user) %><br>
-      </li>
+<div class="dashboard">
+  <div class="container">
+    <h1>dashboard</h1>
+    <div class="col-md-3 btn"><%= link_to 'Host A New Game', new_game_path %></div>
+    <div class="col-md-3 btn"><%= link_to 'Join A Game', games_path %></div>
+    <div class="col-md-3 btn"><%= link_to 'Search Friends', users_path %></div>
+    <div id="filter-game-list">
+      <div class="row">
+        <div><a href="#" class="list-header">Upcoming Games</a></div>
+        <div><a href="#">All</a></div>
+        <div><a href="#">Games I'm Hosting</a></div>
+        <div><a href="#">Games I'm Playing</a></div>
+      </div>
+    </div>
+    <div id="games-list">  
+      <% current_user.upcoming_games_all.each do |game| %>
+      <div class="row game">
+        <div class="col-md-3 date"><%= game.date.strftime("%A, %B %e") %></div>
+        <div class="col-md-6 description"><%= link_to "#{game.description}", game %></div>
+        <div class="col-md-3 location"><%= Park.find(game.park_id).name %></div>
+      </div>
       <% end %>
-    <% end %>
-  </ul>
+    </div>
+      <div>Friends</div>
+      <div id="friends-list">
+        <% @users.sample(10).each do |user| %>
+        <% if user.id != current_user.id %>
+          <div class="col-md-1 friend">
+            <div><%= image_tag "#{user.profile_picture}", alt: "#{user.full_name}" %></div>
+            <div><%= link_to "#{user.full_name}", user_path(user) %></div>
+            <p>Favorite Games:<br><%= user.favorite_games %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<div id="games-list">
-  <h2>Upcoming Games</h2>
-  <h3>Games I'm Hosting:</h3>
-  <ul>
-    <% current_user.upcoming_games_host.each do |game| %>
-    <li><%= "#{game.date.strftime("%A, %B %e")}" %> | <%= link_to "#{game.description}", game %></li>
-    <% end %>
-  </ul>
-  <h3>Games I'm Playing:</h3>
-  <ul>
-    <% current_user.upcoming_games_player.each do |game| %>
-    <li><%= "#{game.date.strftime("%A, %B %e")}" %> | <%= link_to "#{game.description}", game %></li>
-    <% end %>
-  </ul>
-</div>
-
