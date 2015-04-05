@@ -14,15 +14,6 @@
   <li>Location: <%= @game.park.name %> at <%= @game.park.location %></li>
   <li> Weather: <%= @weather.forecast_for("WA","Spokane")%> </li>
 
- 
- <iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyARuFeC9Bt_vl4Icq0dGRoEzwJb4m2FhXc&q=Space+Needle,Seattle+WA">
-</iframe> 
-
-
   <li>Players:</li>
   <li><% @game.players.each do |p| %>
       <%= image_tag "#{p.profile_picture}", alt: "#{p.full_name}" %>

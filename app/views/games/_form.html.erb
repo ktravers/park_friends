@@ -1,6 +1,6 @@
 <div class="game-form">
 
-<%= simple_form_for(@game) do |f| %>
+<%= form_for(@game) do |f| %>
 
    <%= f.hidden_field :host_id, value: @user.id %>
    <!-- hidden field passes host_id in params -->
@@ -11,8 +11,8 @@
    <%= f.label :description %><br>
    <%= f.text_field :description %><br>
 
-   <%= f.label :game_category %><br>
-   <%= f.select :game_category, collection: @game.game_categories.keys %><br>
+   <%= f.label :facility %><br>
+   <%= f.collection_select :game_category, Park.order(:name), :id, :name, include_blank: false %><br>
 
    <%= f.label :date %><br>
    <%= f.date_field :date, min: Date.today, placeholder: Date.today %><br> 
@@ -26,9 +26,8 @@
    <%= f.text_field :player_limit %><br>
 
    <%= f.label :location %><br>
-   <%= f.input :park_id, label: false, collection: Park.all.order("name") %><br> 
+   <%= f.grouped_collection_select :park_id, Park.order(:name), :activities, :name, :id, :name %><br> 
    <!-- todo: filter parks by game_category selected value -->
-
 
    <%= f.label :additional_info %><br>
    <%= f.text_field :additional_info %><br> 
