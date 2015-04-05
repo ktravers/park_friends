@@ -5,12 +5,15 @@ html {
   min-height: 100%;
 }
 body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
+  margin-bottom: 90px; /* Margin bottom by footer height */
   background-color: #e7e7e7;
   /*background: url("background.png");*/
   /*background-size: cover;*/
 }
-div#welcome-button .btn-default { /* Custom default button */
+/*a {
+  color:#3399ff;
+}*/
+div#welcome-button .btn-default {
   color: #fff;
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #3399ff;
@@ -18,7 +21,7 @@ div#welcome-button .btn-default { /* Custom default button */
 }
 div#welcome-button .btn-default:hover,
 div#welcome-button .btn-default:focus,
-div#welcome-button .btn-default:focus {
+div#welcome-button .btn-default:active {
   background: rgba(51, 153, 255, 0.75);
   border: 1px solid #3399ff;
 }
@@ -64,7 +67,7 @@ body > nav > div > div.navbar-header > a.navbar-brand:hover,
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
+  height: 90px; /* Set the fixed height of the footer here */
   background-color: #006666;
   color: #fff;
   text-align: center;
@@ -118,8 +121,7 @@ body > .container {
   text-decoration: none;
 }
 .container .text-muted a:hover {
-  color: #003333;
-  text-decoration: underline;
+  color: #3399ff;
 }
 .footer > .container {
   padding-right: 15px;
@@ -137,9 +139,12 @@ footer ul {
 }
 footer li {
   display: inline-block;
-  padding-right: 1em;
-  padding-left: 1em;
+  padding: 0 1em 0 1em;
 }
 footer li:first-child {
   padding-left: 0;
+}
+.glyphicon-heart {
+  color:#3399ff; 
+  padding-right: 0;
 }

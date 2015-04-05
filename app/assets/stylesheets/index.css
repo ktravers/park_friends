@@ -27,10 +27,6 @@ body > .index-page > .container {
   -moz-border-radius: 5px;
   clear: both;
 }
-.index-page div#nyc-parks-list .name {
-  font-weight: bold;
-}
-
 .index-page div.btn.btn-default.small a,
 .index-page div.btn.btn-default.back a {
   color: #fff;

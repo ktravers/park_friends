@@ -53,6 +53,7 @@ body > .dashboard > .container {
 .dashboard div#games-list .row {
   font-size: 1.25em;
   padding: 1.5em 0 1.5em 0;
+  margin-bottom: 0.5em;
   background-color: #fff;
   border: 1px solid #e7e7e7;
   border-radius: 5px;
@@ -80,9 +81,10 @@ body > div.dashboard > div > div:nth-child(7) {
   -moz-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1);
   box-shadow: 0px 0px 10px 5px rgba(255,255,255,1);*/
 }
-.dashboard div.col-md-1.friend img {
+.dashboard div.col-md-1.friend > div {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
+  /*background-color: #3399ff;*/
 }
 .dashboard div.col-md-1.friend a {
 }
