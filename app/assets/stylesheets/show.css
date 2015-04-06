@@ -1,6 +1,13 @@
-.show-page {
-
+/* User and Game Show page styling
+-------------------------------------------------- */
+.show-page a {
+  color: #3399ff;
+  text-decoration: none;
 }
+.show-page a:hover {
+  color: #003333;
+}
+
 .show-page ul {
   padding: 2em 0 0.5em 0;
 }
@@ -26,6 +33,13 @@
   border-radius: 0;
   line-height: 3;
 }
+.show-page.user div.label {
+  min-width: 150px;
+}
+.show-page.user li.list-group-item.games a {
+  margin-right: 1em;
+}
+
 /* Button styling
 -------------------------------------------------- */
 .show-page div.btn-group a.btn.btn-default,
@@ -56,7 +70,8 @@
 .show-page div.btn-group div.btn.btn-default {
   margin-bottom: 2.5em;
 }
-.show-page div.btn-group.col-md-7 {
+.show-page.user div.btn-group.col-md-8,
+.show-page.game div.btn-group.col-md-7 {
   padding-left: 0;
   text-align: center;
   float: left;
@@ -71,9 +86,11 @@
 }
 /* Player profile picture styling
 -------------------------------------------------- */
-.show-page li.list-group-item.players div.label{
+.show-page li.list-group-item.friends div.label,
+.show-page li.list-group-item.players div.label {
   line-height: 4;
 }
+.show-page li.list-group-item.friends div.friend-pic-name,
 .show-page li.list-group-item.players div.player-pic-name {
   display: inline-block;
   margin-right: 1em;
@@ -100,3 +117,11 @@ form .edit_game,
   border: 1px solid #3399ff;
   text-decoration: none;
 } 
+/* Glyphicons
+-------------------------------------------------- */
+.show-page .glyphicon {
+  font-size: 0.9em;
+}
+.show-page.user .glyphicon-calendar {
+  color: #3399ff;
+}
