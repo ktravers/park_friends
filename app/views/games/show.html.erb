@@ -40,8 +40,8 @@
       <% end %> 
       </li>
 
-      <li class="list-group-item"><div class="label">Additional info:</div> <%= @game.additional_info %></li>
-      <!-- todo: add weather -->
+      <li class="list-group-item"><div class="label">Additional info:</div><%= @game.additional_info %></li>
+      <li class="list-group-item"><div class="label">Current weather:</div><%= @weather.conditions_for("NY","New York")["current_observation"]["temperature_string"]%></li>
     </ul>
     </div><!-- end .list-group -->
 

@@ -19,9 +19,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @weather = Wunderground.new("64679313d5859bed")
-    # @w_api = Wunderground.new("64679313d5859bed")
-    # @w_api.conditions_for("NY","New York")
+    @weather = Wunderground.new(ENV['wu_key'])
   end
 
   # creates new game object from params hash
@@ -32,7 +30,6 @@ class GamesController < ApplicationController
   		redirect_to @game, :notice => "Congrats! You're hosting a game."
       # idea: have :notice display include "Now invite some friends!" => as a link to our mailer
   	end
-    # @w_api = Wunderground.new("64679313d5859bed")
   end
 
   # update game attributes

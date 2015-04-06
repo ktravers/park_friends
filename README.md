@@ -1,40 +1,37 @@
-# Park Friends
+# Parkster
+Get social with NYC parks.
 
-## Description
+### Description
 
-Add a short description of your app.
+Parkster is a social network platform organized around playing games together in New York City's beatiful parks. Users can use this app to quickly gather friends together to play a game at a park of their choice. The game leader decides on an activity, sets a meeting time and place, and can then notify their friends via email invite. Players can browse upcoming games and sign up to join. 
 
-## Screenshots
+### Features
 
-Add some spiffy screenshots of your app here.
+* New user signup through Facebook (via OmniAuth)
+* User dashboard showing summary of user's upcoming games, friends list, and options to join or create a game
+* Editable profile pages for individual users
+* Email invite system for each game (ActionMailer)
+* One click sign up for games
+* Event calendar showing all upcoming events
+* Park listing showing all NYC park locations
+* Park information parsed from [NYC Open Data](http://dev.socrata.com/foundry/#/data.cityofnewyork.us/e4ej-j6hn)
 
-## Background
+### Development/Contribution
 
-Why did you want to make this app? What was your development process
-like?
+Parkster is an ongoing work-in-progress. Please contribute by forking then sending a pull request.
 
-## Features
+### Future
 
-Bullet point some of the key features of your app here.
+* Add Google Map API embed
+* Enhance UX using jQuery
+* Add additional signup options (Twitter, Google+, etc.)
+* Add feature tests (rspec)
+* Add ability to print out rosters of players for each game
 
-## Usage
+### Author
 
-How do users use your app?
+Made with ♥ at [Flatiron School](http://flatironschool.com) by Nicole S. and [Kate Travers](https://github.com/ktravers). Parkster is not affiliated with [New York City Department of Parks & Recreation]("http://www.nycgovparks.org").
 
-## Development/Contribution
-
-Explain how people can contribute to your app. How should they write tests?
-Any things in particular you'd like to see in pull requests?
-
-## Future
-
-What features are you currently working on? Only mention things that you
-actually are implementing. No pie-in-the-sky-never-gonna-happen stuff.
-
-## Author
-
-Link to your blog, twitter, etc!
-
-## License
+### License
 
 Park Friends is MIT Licensed. See LICENSE for details.
