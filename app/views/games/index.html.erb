@@ -7,8 +7,8 @@
     <div id="calendar-games-list">  
       <% @games.each do |game| %>
         <div class="calendar game row">
-          <div class="col-md-2 date"><%= game.date.strftime("%A, %B %e") %></div>
-          <div class="col-md-1 time"><%= game.time.strftime("%l:%M %p") %></div>
+          <div class="col-md-2 date"><%= game.date.strftime("%A, %B %e") if game.date %></div>
+          <div class="col-md-1 time"><%= game.time.strftime("%l:%M %p") if game.time %></div>
           <div class="col-md-3 description"><%= link_to "#{game.description}", game %></div>
           <div class="col-md-1 category"><%= game.game_category %></div>
           <div class="col-md-3 park"><%= game.park.name %></div>
