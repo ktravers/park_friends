@@ -1,0 +1,75 @@
+.show-page {
+
+}
+.show-page ul {
+  padding: 2em 0 0.5em 0;
+}
+.show-page li {
+  padding: 0 0 0 0.5em;
+}
+.show-page li.list-group-item.active {
+  line-height: 3;
+  padding: 0 0 0 1em;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color: rgba(51, 153, 255, 1)
+}
+.show-page div.label {
+  color: #006666;
+  font-weight: 700;
+  font-size: 1em;
+  margin-right: 1em;
+  min-width: 125px;
+  display: inline-block;
+  text-align: left;
+  border-right: 1px solid #e7e7e7;
+  border-radius: 0;
+  line-height: 3;
+}
+/* Button styling
+-------------------------------------------------- */
+.show-page div.btn-group a.btn.btn-default,
+.show-page div.btn.btn-default {
+  background-color: #3399ff;
+  font-size: 1em;
+  max-width: 250px;
+  border: 1px solid #3399ff;
+}
+.show-page div.btn-group a.btn.btn-default:hover,
+.show-page div.btn-group a.btn.btn-default:focus,
+.show-page div.btn-group a.btn.btn-default:active,
+.show-page div.btn.btn-default:hover,
+.show-page div.btn.btn-default:focus,
+.show-page div.btn.btn-default:active {
+  background: rgba(51, 153, 255, 0.75);
+  border: 1px solid #3399ff;
+  text-decoration: none;
+}
+.show-page div.btn-group a.btn.btn-default,
+.show-page div.btn.btn-default a {
+  color: #fff;
+}
+.show-page div.btn.btn-default.invite {
+  margin-left: 1em;
+  padding: 3px 12px 3px 12px;
+}
+.show-page div.btn-group a.btn.btn-default {
+  margin-bottom: 2em;
+}
+.show-page div.btn-group.col-md-8{
+  padding-left: 0;
+  text-align: center;
+  float: none;
+}
+.show-page div.col-md-2 {
+  clear: both;
+}
+/* Player profile picture styling
+-------------------------------------------------- */
+.show-page li.list-group-item.players div.label{
+  line-height: 4;
+}
+.show-page li.list-group-item.players div.player-pic-name {
+  display: inline-block;
+  margin-right: 1em;
+}
