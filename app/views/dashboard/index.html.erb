@@ -18,7 +18,7 @@
       <div class="row game">
         <div class="col-md-3 date"><%= game.date.strftime("%A, %B %e") %></div>
         <div class="col-md-6 description"><%= link_to "#{game.description}", game %></div>
-        <div class="col-md-3 location"><%= game.park.name %></div>
+        <div class="col-md-3 location"><%= link_to "#{game.park.name}", "https://www.google.com/maps/place/#{game.park.location.gsub(" ","+")}+NY" if game.park.location %></div>
       </div><!-- end of .row.game -->
       <% end %>
     </div><!-- end of .games-list -->

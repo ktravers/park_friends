@@ -11,7 +11,7 @@
           <div class="col-md-1 time"><%= game.time.strftime("%l:%M %p") if game.time %></div>
           <div class="col-md-3 description"><%= link_to "#{game.description}", game %></div>
           <div class="col-md-1 category"><%= game.game_category %></div>
-          <div class="col-md-3 park"><%= game.park.name %></div>
+          <div class="col-md-3 park"><%= link_to "#{game.park.name}", "https://www.google.com/maps/place/#{game.park.location.gsub(" ","+")}+NY" if game.park.location %></div>
           <% if logged_in? && !game.players.include?(current_user) && current_user.id != game.host_id %>
           <div class="col-md-1 btn btn-default small"><%= link_to "Sign Up", game %></div>
           <% else %>

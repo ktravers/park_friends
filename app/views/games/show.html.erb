@@ -13,7 +13,7 @@
       <% end %>
       <li class="list-group-item"><div class="label">Date:</div><%= @game.date.strftime("%A, %B %e") if @game.date %></li>
       <li class="list-group-item"><div class="label">Time:</div><%= @game.time.strftime("%l:%M %p") if @game.time %></li>
-      <li class="list-group-item"><div class="label">Location:</div><%= @game.park.name %> at <%= @game.park.location %></li>
+      <li class="list-group-item"><div class="label">Location:</div><%= @game.park.name %> at <%= link_to "#{@game.park.location}", "https://www.google.com/maps/place/#{@game.park.location.gsub(" ","+")}+NY" if @game.park.location %></li>
       <li class="list-group-item players"><div class="label">Players:</div>
         <% @game.players.each do |p| %>
           <div class="player-pic-name">
