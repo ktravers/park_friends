@@ -71,6 +71,12 @@ body > nav > div > div.navbar-header > a.navbar-brand:hover,
 .navbar-static-top li img {
   margin-top: 5px;
 }
+#navbar > ul.nav.navbar-nav.navbar-right > li:nth-child(3) > a {
+  padding: 0;
+}
+#navbar > ul.nav.navbar-nav.navbar-right > li:nth-child(3) > a:hover {
+  opacity: 0.9;
+}
 .navbar-static-top a.navbar-brand {
   font-size: 1.75em;
   font-weight: bold;
