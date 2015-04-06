@@ -53,16 +53,21 @@
   margin-left: 1em;
   padding: 3px 12px 3px 12px;
 }
-.show-page div.btn-group a.btn.btn-default {
-  margin-bottom: 2em;
+.show-page div.btn-group div.btn.btn-default {
+  margin-bottom: 2.5em;
 }
-.show-page div.btn-group.col-md-8{
+.show-page div.btn-group.col-md-7 {
   padding-left: 0;
   text-align: center;
-  float: none;
+  float: left;
+  padding-left: 0;
+  padding-right: 0;
 }
 .show-page div.col-md-2 {
   clear: both;
+}
+.show-page div.col-md-1 {
+  padding: 3px 15px 3px 0;
 }
 /* Player profile picture styling
 -------------------------------------------------- */
@@ -73,3 +78,25 @@
   display: inline-block;
   margin-right: 1em;
 }
+/* Hidden form button styling (Sign Up)
+-------------------------------------------------- */
+form .edit_game,
+.show-page div.col-md-1 .edit_game input[type=submit]:nth-child(6) {
+  background-color: #3399ff;
+  font-size: 1em;
+  max-width: 250px;
+  border: 1px solid #3399ff;
+  color: #fff;
+  min-width: 60px;
+  float: right;
+  padding: 6px 2em 6px 2em;
+  clear: none;
+  border-radius: 4px;
+}
+.show-page div.col-md-1 .edit_game input[type=submit]:nth-child(6):hover,
+.show-page div.col-md-1 .edit_game input[type=submit]:nth-child(6):active,
+.show-page div.col-md-1 .edit_game input[type=submit]:nth-child(6):focus {
+  background: rgba(51, 153, 255, 0.75);
+  border: 1px solid #3399ff;
+  text-decoration: none;
+} 

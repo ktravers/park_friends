@@ -1,9 +1,8 @@
 <body>
 <div class="show-page">
   <div class="container">
-    <div class="col-md-2"></div>
-    <div class="list-group col-md-8">
-    
+    <div class="col-md-2"></div><!-- maintain page layout -->
+    <div class="list-group col-md-8"> 
     <ul>
       <li class="list-group-item active"><%= @game.description %></li>
       <li class="list-group-item"><div class="label">Activity:</div><%= @game.game_category %></li>
@@ -27,7 +26,6 @@
             <% end %>
           </div>
         <% end %>
-        <%= render 'reservation' if player_not_signed_up? %>
       </li>
       <li class="list-group-item"><div class="label">Open spots:</div> <%= @game.has_open_spots? ? @game.open_spots : "Sorry, this game is full." %>
       
@@ -49,13 +47,20 @@
     </ul>
     </div><!-- end .list-group -->
 
-    <!-- <div class="col-md-4"></div> -->
-    <div class="col-md-2"></div><div class="btn-group col-md-8">
+    <div class="col-md-2"></div><!-- maintain page layout -->
+    <div class="btn-group col-md-7">
       <% if current_user_is_host? %>
       <%= link_to "Edit", edit_game_path, class: "btn btn-default" %>
       <%= link_to 'Delete', @game, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-      <%= link_to "Back to games", games_path, class: "btn btn-default" %>
+      <div class="btn btn-default">
+      <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+      <%= link_to "Back to games", games_path %>
+      </div>
+    </div><!-- end .btn-group -->
+    
+    <div class="col-md-1">
+    <%= render 'reservation' if player_not_signed_up? %>
     </div>
   </div><!-- end of .container -->
 </div><!-- end of .show-page -->

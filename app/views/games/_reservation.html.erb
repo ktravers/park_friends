@@ -1,5 +1,4 @@
 <!-- builds a new reservation object on @game -->
-<div class="btn btn-default invite"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>
 <%= form_for @game do |f| %>
 
   <!-- get error messages to display -->
@@ -19,6 +18,7 @@
   <%= rf.hidden_field :game_id, value: @game.id %>
   <%= rf.hidden_field :player_id, value: current_user.id %>
   <%= f.submit "Sign Up" %>
+  </div>
   <% end %>
 <% end %>
 </div>
