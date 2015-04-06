@@ -27,7 +27,7 @@
         <% @users.sample(10).each do |user| %>
         <% if user.id != current_user.id %>
           <div class="col-md-1 friend">
-            <div><%= image_tag "#{user.profile_picture}", alt: "#{user.full_name}" %></div>
+            <div><%= link_to(image_tag("#{user.profile_picture}"), user_path(user)) %></div>
             <div><%= link_to "#{user.full_name}", user_path(user) %></div>
             <hr>
             <p>Favorite Games:<br><%= user.favorite_games %></p>
