@@ -1,4 +1,16 @@
 <body>
-<h1>Edit game details:</h1>
-<%= render 'form' %>
-<%= link_to 'Cancel', @game %>
+<div class="input-page">
+  <div class="container">
+    <div class="col-md-2"></div><!-- maintain page layout -->
+      <div class="list-group col-md-8"> 
+        <h1>Edit game details:</h1>
+        <%= render 'form' %>
+
+          <div class="btn btn-default">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>    
+          <%= link_to 'Cancel', @game %> 
+          </div>
+       </div><!-- end of .list-group col-md-8" -->   
+    </div><!-- end .btn-group -->
+  </div><!-- end of .container -->
+</div><!-- end of .show-page -->

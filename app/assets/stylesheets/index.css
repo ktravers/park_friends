@@ -3,6 +3,7 @@
 body > .index-page > .container {
   padding: 0px 15px 0;
   color: #003333;
+  /*margin-bottom: 1em;*/
 }
 .index-page h1 {
   font-size: 2.5em;
@@ -58,7 +59,7 @@ body > .index-page > .container {
 }
 .users-index div.btn.btn-default.back,
 .index-page div.btn.btn-default.back {
-  margin: 1em 0em 1.5em 0em;
+  margin: 0.5em 0em 1.5em 0em;
   background-color: #3399ff;
   font-size: 1.25em;
   max-width: 250px;
@@ -84,4 +85,7 @@ body > .index-page > .container {
 .index-page div.btn.btn-default.back:active {
   background: rgba(51, 153, 255, 0.75);
   border: 1px solid #3399ff;
+}
+#calendar-games-list {
+  margin-bottom: 2em;
 }

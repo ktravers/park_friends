@@ -1,18 +1,20 @@
-/* User and Game Show page styling
--------------------------------------------------- */
+/* User and Game Show page styling (includes some Edit / New)
+------------------------------------------------------------- */
+.input-page a,
 .show-page a {
   color: #3399ff;
   text-decoration: none;
 }
+.input-page a:hover,
 .show-page a:hover {
   color: #003333;
 }
-
 .show-page ul {
   padding: 2em 0 0.5em 0;
 }
 .show-page li {
   padding: 0 0 0 0.5em;
+  border-color: #ccc;
 }
 .show-page li.list-group-item.active {
   line-height: 3;
@@ -39,11 +41,11 @@
 .show-page.user li.list-group-item.games a {
   margin-right: 1em;
 }
-
 /* Button styling
 -------------------------------------------------- */
 .show-page div.btn-group a.btn.btn-default,
-.show-page div.btn.btn-default {
+.show-page div.btn.btn-default,
+.input-page div.btn.btn-default {
   background-color: #3399ff;
   font-size: 1em;
   max-width: 250px;
@@ -54,19 +56,24 @@
 .show-page div.btn-group a.btn.btn-default:active,
 .show-page div.btn.btn-default:hover,
 .show-page div.btn.btn-default:focus,
-.show-page div.btn.btn-default:active {
+.show-page div.btn.btn-default:active,
+.input-page div.btn.btn-default:hover,
+.input-page div.btn.btn-default:focus,
+.input-page div.btn.btn-default:active {
   background: rgba(51, 153, 255, 0.75);
   border: 1px solid #3399ff;
   text-decoration: none;
 }
 .show-page div.btn-group a.btn.btn-default,
-.show-page div.btn.btn-default a {
+.show-page div.btn.btn-default a,
+.input-page div.btn.btn-default a {
   color: #fff;
 }
 .show-page div.btn.btn-default.invite {
   margin-left: 1em;
   padding: 3px 12px 3px 12px;
 }
+.input-page div.btn.btn-default,
 .show-page div.btn-group div.btn.btn-default {
   margin-bottom: 2.5em;
 }
@@ -84,6 +91,10 @@
 .show-page div.col-md-1 {
   padding: 3px 15px 3px 0;
 }
+.input-page div.btn.btn-default {
+  margin-top:;
+}
+
 /* Player profile picture styling
 -------------------------------------------------- */
 .show-page li.list-group-item.friends div.label,
@@ -97,6 +108,7 @@
 }
 /* Hidden form button styling (Sign Up)
 -------------------------------------------------- */
+
 form .edit_game,
 .show-page div.col-md-1 .edit_game input[type=submit]:nth-child(6) {
   background-color: #3399ff;
@@ -119,6 +131,7 @@ form .edit_game,
 } 
 /* Glyphicons
 -------------------------------------------------- */
+.input-page .glyphicon,
 .show-page .glyphicon {
   font-size: 0.9em;
 }

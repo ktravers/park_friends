@@ -1,40 +1,58 @@
 <div class="game-form">
+   <%= simple_form_for(@game) do |f| %>
+      
+      <div class="input-group input-group-lg">
+      <span class="input-group-addon"><%= f.label :host %><br></span>
+      <%= f.text_field :host, value: "#{@user.first_name} #{@user.last_name}", class: "form-control" %><br>
+      </div>
 
-<%= simple_form_for(@game) do |f| %>
+      <div class="input-group input-group-lg">
+      <span class="input-group-addon"><%= f.label :description %><br></span>
+      <%= f.text_field :description, class: "form-control", placeholder: "Museum league softball: The Whitney Houstons vs. AMNH" %><br>
+      </div>
 
-   <%= f.hidden_field :host_id, value: @user.id %>
-   <!-- hidden field passes host_id in params -->
+      <div class="input-group input-group-lg">
+      <span class="input-group-addon"><%= f.label "Activity" %><br></span>
+      <%= f.select :game_category, collection: @game.game_categories.keys, class: "form-control", placeholder: "Baseball" %><br>
+      </div>
 
-   <%= f.label :host %><br>
-   <%= f.text_field :host, value: "#{@user.first_name} #{@user.last_name}" %><br>
+      <div class="input-group input-group-lg">
+      <span class="input-group-addon"><%= f.label :date %><br></span>
+      <%= f.date_field :date, min: Date.today, placeholder: Date.today, class: "form-control" %><br> 
+      </div>
+      <!-- placeholder set to Date.today; cannot choose date in the past -->
 
-   <%= f.label :description %><br>
-   <%= f.text_field :description %><br>
+      <div class="input-group input-group-lg">
+      <span class="input-group-addon"><%= f.label :time %><br></span>
+      <%= f.time_field :time, placeholder: Time.now.localtime.strftime("%H:%M"), class: "form-control" %><br> 
+      </div>
+      <!-- TODO: make this work: placeholder value formatted as hour:minute am/pm -->
 
-   <%= f.label :game_category %><br>
-   <%= f.select :game_category, collection: @game.game_categories.keys %><br>
+      <div class="input-group input-group-lg">
+      <span class="input-group-addon"><%= f.label :player_limit %><br></span>
+      <%= f.text_field :player_limit, class: "form-control", placeholder: "20" %><br>
+      </div>
 
-   <%= f.label :date %><br>
-   <%= f.date_field :date, min: Date.today, placeholder: Date.today %><br> 
-   <!-- placeholder set to Date.today; cannot choose date in the past -->
+      <div class="input-group input-group-lg">
+      <span class="input-group-addon"><%= f.label :location %><br></span>
+      <%= f.input :park_id, label: false, collection: Park.all.order("name"), class: "form-control" %><br> 
+      <!-- todo: filter parks by game_category selected value -->
+      </div>
 
-   <%= f.label :time %><br>
-   <%= f.time_field :time, placeholder: Time.now.localtime.strftime("%H:%M")  %><br> 
-   <!-- TODO: make this work: placeholder value formatted as hour:minute am/pm -->
+      <div class="input-group input-group-lg">
+      <span class="input-group-addon"><%= f.label :additional_info %><br></span>
+      <%= f.text_field :additional_info, class: "form-control", placeholder: "Love is a contact sport." %><br> 
+      </div>
+      <%= f.hidden_field :host_id, value: @user.id %>
+      <!-- hidden field passes host_id in params -->
+    </div><!-- end of .game-form -->
 
-   <%= f.label :player_limit %><br>
-   <%= f.text_field :player_limit %><br>
-
-   <%= f.label :location %><br>
-   <%= f.input :park_id, label: false, collection: Park.all.order("name") %><br> 
-   <!-- todo: filter parks by game_category selected value -->
-
-   <%= f.label :additional_info %><br>
-   <%= f.text_field :additional_info %><br> 
- </div>
-
- <div class="game-form-button">
-   <%= f.submit %>
- </div>
-
+  <div class="btn-group col-md-8"> 
+  <div class="btn-group">
+  <div class="btn btn-default game-form-button">
+  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+  <%= f.submit %>
 <% end %>
+</div>
+
+

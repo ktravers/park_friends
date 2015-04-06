@@ -1,22 +1,42 @@
 <div class="user-form">
-<%= simple_form_for(@user) do |f| %>
-   <%= f.label :first_name %><br>
-   <%= f.text_field :first_name, placeholder: "Leslie" %><br>
-   <%= f.label :last_name %><br>
-   <%= f.text_field :last_name, placeholder: "Knope" %><br>
-   <%= f.label :email %><br>
-   <%= f.text_field :email, placeholder: "leslie.knope@pawneeparksandrec.gov" %><br>
-   <%= f.label :zipcode %><br>
-   <%= f.text_field :zipcode, placeholder: "10001" %><br>
-   <%= f.label "Profile Picture URL" %><br>
-   <%= f.text_field :profile_picture, placeholder: "Enter a valid image url." %><br>
-   <%= f.label :favorite_games %><br>
-   <%= f.text_field :favorite_games, placeholder: "What are some of your favorite games?"%><br>
-</div>
+  <%= simple_form_for(@user) do |f| %>
 
-<div class="user-form-button">
-<%= f.submit %>
-</div>
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon"><%= f.label :first_name %></span>
+    <%= f.text_field :first_name, placeholder: "Leslie", class: "form-control" %><br>
+    </div>
 
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon"><%= f.label :last_name %><br></span>
+    <%= f.text_field :last_name, placeholder: "Knope", class: "form-control" %><br>
+    </div>
+
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon"><%= f.label :email %><br></span>
+    <%= f.text_field :email, placeholder: "leslie.knope@pawneeparksandrec.gov", class: "form-control" %><br>
+    </div>
+
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon"><%= f.label :zipcode %><br></span>
+    <%= f.text_field :zipcode, placeholder: "10001", class: "form-control" %><br>
+    </div>
+
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon"><%= f.label "Profile Picture URL" %><br></span>
+    <%= f.text_field :profile_picture, placeholder: "Enter a valid image url.", class: "form-control" %><br>
+    </div>
+
+    <div class="input-group input-group-lg">
+    <span class="input-group-addon"><%= f.label :favorite_games %><br></span>
+    <%= f.text_field :favorite_games, placeholder: "Cones of Dunshire, Basketball, Baseball, Football...", class: "form-control" %><br>
+    </div>
+</div><!-- end of .user-form -->
+
+  <div class="btn-group col-md-8">
+  <div class="btn-group">
+  <div class="btn btn-default user-form-button">
+  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+  <%= f.submit %>
 <% end %>
+</div>
  

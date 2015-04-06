@@ -1,0 +1,61 @@
+/* Update form button styling
+-------------------------------------------------- */
+.input-page .game-form,
+.input-page .user-form {
+  margin: 2em 0 2em 0;
+}
+.input-page .game-form .input-group-addon label,
+.input-page .user-form .input-group-addon label {
+  min-width: 9em;
+  text-align: left;
+  margin-bottom: 0;
+}
+.input-page .game-form .input-group-addon,
+.input-page .user-form .input-group-addon {
+/*  background-color: ;
+  color: #fff;*/
+}
+.input-page .game-form div.input-group.input-group-lg,
+.input-page .user-form div.input-group.input-group-lg {
+  line-height: 3;
+  margin-top: 1em;
+}
+.input-page .input-group .form-control:not(:first-child):not(:last-child),
+.input-page .form-control {
+  /*border: 1px solid #ccc;*/
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-page div.btn-group.col-md-8 {
+  padding-left: 0;
+}
+.input-page div.btn.btn-default.game-form-button > input[type="submit"],
+.input-page div.btn.btn-default.user-form-button > input[type="submit"] {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+/* Drop down menu styling
+-------------------------------------------------- */
+.simple_form.new_game select,
+.simple_form.edit_game select {
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+  }
