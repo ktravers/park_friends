@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150401021653) do
 
   create_table "games", force: :cascade do |t|
     t.string  "description"
-    t.date    "date",            default: '2015-04-04'
+    t.date    "date",            default: '2015-04-06'
     t.time    "time"
     t.string  "game_category"
     t.integer "player_limit",    default: 10
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 20150401021653) do
     t.string  "last_name"
     t.string  "email"
     t.string  "zipcode"
-    t.string  "profile_picture"  default: "default-profile-pic.png"
+    t.string  "profile_picture", default: "default-profile-pic.png"
     t.string  "favorite_games"
-    t.boolean "host"             default: false 
+    t.boolean "host"
     t.string  "provider",        default: "facebook"
     t.string  "uid"
     t.string  "token"

@@ -41,7 +41,15 @@
       </li>
 
       <li class="list-group-item"><div class="label">Additional info:</div> <%= @game.additional_info %></li>
-      <!-- todo: add weather -->
+      <%= @w_api.conditions_for("NY","New York")["current_observation"]["temperature_string"]%>
+<!-- <iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhamu6l8rnneeiPSSTP6Qx5fk7WyAvaZM&q=Space+Needle,Seattle+WA">
+</iframe> -->
+
+
     </ul>
     </div><!-- end .list-group -->
 
