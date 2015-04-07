@@ -82,7 +82,7 @@ body > nav > div > div.navbar-header > a.navbar-brand:hover,
   font-weight: bold;
   margin: -3px 0 2px 0;
 }
-#notice {
+ul.nav.navbar-nav.navbar-right li a#notice {
   color: #3399ff;
 }
 /* Welcome cover styles
