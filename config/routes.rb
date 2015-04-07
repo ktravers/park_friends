@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'parks' => 'parks#index'
   resources :users
   resources :games
+  # get 'cancel', to: 'reservations#destroy', as: 'cancel'
 
   # ActionMailer route for invite email
   get 'invite' => 'games#invite'

@@ -20,6 +20,7 @@ class GamesController < ApplicationController
 
   def show
     @weather = Wunderground.new(ENV['wu_key'])
+    @reservation = @game.reservations.find_by(:player_id => current_user.id)
   end
 
   # creates new game object from params hash
