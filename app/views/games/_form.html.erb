@@ -8,7 +8,7 @@
 
       <div class="input-group input-group-lg">
       <span class="input-group-addon"><%= f.label :description %><br></span>
-      <%= f.text_field :description, class: "form-control", placeholder: "Museum league softball: The Whitney Houstons vs. AMNH" %><br>
+      <%= f.text_field :description, class: "form-control", placeholder: "Pawnee Harvest Fest Softball Tourney" %><br>
       </div>
 
       <div class="input-group input-group-lg">
@@ -41,7 +41,7 @@
 
       <div class="input-group input-group-lg">
       <span class="input-group-addon"><%= f.label :additional_info %><br></span>
-      <%= f.text_field :additional_info, class: "form-control", placeholder: "Love is a contact sport." %><br> 
+      <%= f.text_field :additional_info, class: "form-control", placeholder: "Volunteer umps needed. No Eagletonians." %><br> 
       </div>
       <%= f.hidden_field :host_id, value: @user.id %>
       <!-- hidden field passes host_id in params -->
