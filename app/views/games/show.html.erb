@@ -76,7 +76,7 @@
     </div><!-- end .btn-group -->
 
     <div class="col-md-1">
-    <%= render 'reservation' if !current_user_signed_up? && @game.has_open_spots? && !current_user_is_host? %>
+    <%= render 'reservation' if logged_in? && !current_user_signed_up? && @game.has_open_spots? && !current_user_is_host? %>
     </div>
   </div><!-- end of .container -->
 </div><!-- end of .show-page -->
