@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   # site root
   root 'welcome#index'
 
+  # about page
+  get 'about' => 'welcome#show'
+
   # user dashboard
   get 'dashboard' => 'dashboard#index'
 
