@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   # about page
-  get 'about' => 'welcome#show'
+  get 'about' => 'welcome#show', as: 'about'
 
   # user dashboard
   get 'dashboard' => 'dashboard#index'
