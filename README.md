@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/ktravers/park_friends/badges/gpa.svg)](https://codeclimate.com/github/ktravers/park_friends)
+
 # Parkster
 Get social with NYC parks.
 
