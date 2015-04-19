@@ -33,6 +33,7 @@ gem 'simple_form'
 gem 'omniauth-facebook'
 gem 'wunderground'
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -60,6 +61,7 @@ group :test, :development do
   gem 'pry'
   gem 'guard-rspec', require: false
   gem 'thin'
+  gem "codeclimate-test-reporter", require: nil
 end
 
 group :production do

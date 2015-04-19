@@ -29,7 +29,7 @@
       
       <!-- render invite button -->
       <% if @game.has_open_spots? %>
-        <% if logged_in? && current_user_signed_up? %>
+        <% if logged_in? && (current_user_signed_up? || current_user_is_host?) %>
           <div class="btn btn-default invite"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
           <%= link_to "Invite some friends!", invite_path(:game_id => @game.id, :user_id => current_user.id) %>
           </div>

@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     redirect_to root_path, :notice => "Signed out."
   end
 
-  private 
+  private
     # protects env['omniauth.auth'] hash info by placing it inside private method
     def auth_hash
       request.env['omniauth.auth']
