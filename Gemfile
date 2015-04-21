@@ -28,10 +28,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem "figaro"
+gem 'figaro'
 gem 'simple_form'
 gem 'omniauth-facebook'
 gem 'wunderground'
+gem 'rails-erd'
 
 
 group :development, :test do

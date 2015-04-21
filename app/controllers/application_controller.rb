@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def login_required
     if !logged_in?
-      flash[:notice] = "You need to sign in first."
+      flash[:notice] = 'You need to sign in first.'
       redirect_to :back
     end
   end
@@ -16,15 +16,14 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  # checks whether a current user exists, returns true if yes, returns false if not
+  # boolean check on whether a current user exists
   def logged_in?
     !!current_user
   end
   helper_method :logged_in?
 
   # "logs in" user by setting session user_id to user.id
-  def login(user)  
+  def login(user)
     session[:user_id] = user.id
   end
-
 end
