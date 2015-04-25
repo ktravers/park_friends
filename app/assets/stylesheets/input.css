@@ -41,8 +41,8 @@
 }
 /* Drop down menu styling
 -------------------------------------------------- */
-#new_game select,
-#edit_game select {
+#game_game_category,
+#game_park_id {
   -webkit-appearance: none;  /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
   color: #555;
@@ -58,4 +58,4 @@
   float: left;
   width: 100%;
   margin-bottom: 0;
-  }
+}
