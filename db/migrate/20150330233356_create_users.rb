@@ -8,6 +8,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :profile_picture, :default => "default-profile-pic.png"
       t.string :favorite_games
       t.boolean :host
+      t.string :provider, :default => 'facebook'
+      t.string :uid
+      t.string :token
     end
   end
 end

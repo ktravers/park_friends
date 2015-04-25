@@ -3,7 +3,7 @@ class CreateParks < ActiveRecord::Migration
     create_table :parks do |t|
       t.string :name
       t.string :location
-      t.string :activity
+      t.string :facility
     end
   end
 end

@@ -1,4 +1,6 @@
 class Game < ActiveRecord::Base
+  has_one :activity_park
+  has_one :activity, through: :activity_park
   belongs_to :park
   belongs_to :host, :class_name => 'User'
   has_many :reservations, :dependent => :destroy
@@ -21,6 +23,7 @@ class Game < ActiveRecord::Base
     has_reservations? ? (player_limit - reservations.length) : player_limit
   end
 
+  # CHANGE GAME_CATEGORY TO ACTIVITY?
   # game categories dictionary
   def game_categories
     { 'Baseball' => 'Baseball Fields', 'Basketball' => 'Basketball Courts', 
