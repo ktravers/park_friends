@@ -9,13 +9,13 @@ Parkster is a social network platform organized around playing games together in
 
 ### Features
 
-* New user signup through Facebook (via OmniAuth)
+* New user signup through Facebook ([via OmniAuth](https://github.com/mkdynamic/omniauth-facebook))
 * User dashboard showing summary of user's upcoming games, friends list, and options to join or create a game
 * Editable profile pages for individual users
 * Email invite system for each game (ActionMailer)
 * One click sign up for games
-* Event calendar showing all upcoming events
-* Park listing showing all NYC park locations
+* [Event calendar](http://www.parksternyc.com/games) showing all upcoming events
+* [Park listing](http://www.parksternyc.com/parks) showing all NYC park locations
 * Park information parsed from [NYC Open Data](http://dev.socrata.com/foundry/#/data.cityofnewyork.us/e4ej-j6hn)
 
 ### Development/Contribution
