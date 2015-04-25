@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401021653) do
+ActiveRecord::Schema.define(version: 20150421165943) do
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "activity_parks", force: :cascade do |t|
+    t.integer "park_id"
+    t.integer "activity_id"
+  end
 
   create_table "games", force: :cascade do |t|
     t.string  "description"
-    t.date    "date",            default: '2015-04-04'
+    t.date    "date"
     t.time    "time"
     t.string  "game_category"
     t.integer "player_limit",    default: 10
@@ -27,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150401021653) do
   create_table "parks", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.string "activity"
+    t.string "facility"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -40,14 +49,12 @@ ActiveRecord::Schema.define(version: 20150401021653) do
     t.string  "last_name"
     t.string  "email"
     t.string  "zipcode"
-    t.string  "profile_picture"
+    t.string  "profile_picture", default: "default-profile-pic.png"
     t.string  "favorite_games"
     t.boolean "host"
     t.string  "provider",        default: "facebook"
     t.string  "uid"
     t.string  "token"
-    t.integer "expires_at"
-    t.boolean "expires",         default: true
   end
 
 end
