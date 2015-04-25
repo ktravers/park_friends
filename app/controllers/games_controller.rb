@@ -25,6 +25,7 @@ class GamesController < ApplicationController
 
   # creates new game object from params hash
   def create
+    binding.pry
     @game = Game.new(game_params)
     if @game.save
       @user.host = true

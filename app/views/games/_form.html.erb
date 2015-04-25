@@ -1,5 +1,5 @@
 <div class="game-form">
-   <%= simple_form_for(@game) do |f| %>
+   <%= form_for(@game) do |f| %>
       
       <div class="input-group input-group-lg">
       <span class="input-group-addon"><%= f.label :host %><br></span>
@@ -13,7 +13,7 @@
 
       <div class="input-group input-group-lg">
       <span class="input-group-addon"><%= f.label "Activity" %><br></span>
-      <%= f.select :game_category, collection: @game.game_categories.keys, class: "form-control", placeholder: "Baseball" %><br>
+      <%= f.collection_select :game_category, Activity.order(:name), :name, :name, include_blank: 'Select an activity...', class: "form-control" %><br>
       </div>
 
       <div class="input-group input-group-lg">
@@ -35,8 +35,7 @@
 
       <div class="input-group input-group-lg">
       <span class="input-group-addon"><%= f.label :location %><br></span>
-      <%= f.input :park_id, label: false, collection: Park.all.order("name"), class: "form-control" %><br> 
-      <!-- todo: filter parks by game_category selected value -->
+      <%= f.grouped_collection_select :park_id, Activity.all, :parks, :name, :id, :name, include_blank: 'Select a park...', class: "form-control" %><br> 
       </div>
 
       <div class="input-group input-group-lg">

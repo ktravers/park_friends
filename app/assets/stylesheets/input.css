@@ -41,8 +41,8 @@
 }
 /* Drop down menu styling
 -------------------------------------------------- */
-.simple_form.new_game select,
-.simple_form.edit_game select {
+#new_game select,
+#edit_game select {
   -webkit-appearance: none;  /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
   color: #555;
