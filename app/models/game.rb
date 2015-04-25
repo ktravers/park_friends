@@ -1,6 +1,6 @@
 class Game < ActiveRecord::Base
-  has_one :activity_park
-  has_one :activity, through: :activity_park
+  # has_one :activity_park
+  # has_one :activity, through: :activity_park
   belongs_to :park
   belongs_to :host, :class_name => 'User'
   has_many :reservations, :dependent => :destroy
