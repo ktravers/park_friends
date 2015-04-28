@@ -7,7 +7,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:game_id])
     @user = User.find(params[:user_id])
     UserMailer.invitation(@game, @user).deliver
-    redirect_to @game, :notice => 'Invitation sent!'
+    redirect_to @game, notice: 'Invitation sent!'
   end
 
   def index
@@ -28,16 +28,16 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     if @game.save
       @user.host = true
-  	  redirect_to @game, :notice => "Congrats! You're hosting a game."
+  	  redirect_to @game, notice: "Congrats! You're hosting a game."
     end
   end
 
   # update game attributes
   def update
     if @game.update(game_params)
-      redirect_to @game, :notice => 'Game updated.'
+      redirect_to @game, notice: 'Game updated.'
     else
-      redirect_to @game, :notice => 'Sorry, unable to update game.'
+      redirect_to @game, notice: 'Sorry, unable to update game.'
     end
   end
 
@@ -66,5 +66,4 @@ class GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:id, :description, :date, :time, :game_category, :player_limit, :park_id, :host_id, :additional_info, reservations_attributes: [:player_id, :game_id])
   end
-
 end
